@@ -15,3 +15,6 @@
 - [x] Corregir el contraste del texto “TODXS.” en el hero.
 - [x] Eliminar la franja «La posta del día».
 - [x] Renombrar la navegación con etiquetas más formales.
+- [x] Ajustar la escala tipográfica y los espaciados por punto de quiebre.
+- [x] Mejorar la simetría de grillas, tarjetas y márgenes en tabletas y escritorio.
+- [x] Validar la interfaz en celular pequeño, tableta y escritorio ancho.

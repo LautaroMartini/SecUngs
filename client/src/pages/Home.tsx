@@ -136,7 +136,7 @@ export default function Home() {
       </header>
 
       <main id="inicio">
-        <section className="poster-grid grain relative isolate overflow-hidden bg-[#2B0710] pb-10 pt-28 text-white sm:pb-14 sm:pt-32">
+        <section className="poster-grid grain relative isolate overflow-hidden bg-[#2B0710] pb-12 pt-27 text-white sm:pb-16 sm:pt-32 lg:pb-20">
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_9%_18%,rgba(148,28,37,.82),transparent_33%),radial-gradient(circle_at_80%_8%,rgba(255,240,198,.15),transparent_20%)]" />
           <div className="mx-auto grid max-w-6xl gap-9 px-4 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:px-8">
             <div className="relative z-10 pt-3 lg:pt-9">
@@ -144,7 +144,7 @@ export default function Home() {
                 <img src="/manus-storage/logo-lista-44_825fbf95.png" alt="Logo oficial CDF de la Lista 44" className="size-11 rounded-lg object-cover" />
                 <span className="leading-none"><span className="block text-[.58rem] font-black tracking-[.18em] text-[#FFF0C6]">LISTA 44 · CDF</span><strong className="mt-1 block text-xs font-extrabold text-white">Centro de Estudiantes</strong><span className="mt-0.5 block text-[.58rem] font-bold tracking-[.1em] text-white/70">SECUNDARIA UNGS</span></span>
               </div>
-              <h1 className="entry entry-delay-1 display-face mt-5 max-w-xl text-[clamp(3.1rem,9vw,7.3rem)] leading-[0.82] text-white">
+              <h1 className="entry entry-delay-1 display-face mt-5 max-w-xl text-[clamp(2.72rem,8.4vw,6.75rem)] leading-[0.84] text-white">
                 EL CENTRO<br />LO HACEMOS<br /><span className="marker-underline text-[#FFF0C6] [text-shadow:0_3px_0_#700A13]">TODXS.</span>
               </h1>
               <p className="entry entry-delay-2 mt-7 max-w-md text-base font-medium leading-7 text-white/76 sm:text-lg">Ideas que llegan, planes que se mueven y una secundaria que se organiza entre todos.</p>
@@ -172,7 +172,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="propuestas" className="scroll-mt-20 bg-[#F4E0D5] py-20 text-[#2B0710] sm:py-28">
+        <section id="propuestas" className="scroll-mt-20 bg-[#F4E0D5] py-16 text-[#2B0710] sm:py-20 lg:py-28">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-9 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
               <div>
@@ -196,7 +196,7 @@ export default function Home() {
                   próxima: { label: "A IMPULSAR", dot: "bg-[#FFF0C6]", border: "border-[#FFF0C6]/55", icon: ArrowRight },
                 }[proposal.state];
                 const Icon = map.icon;
-                return <article key={proposal.title} className={`interactive-lift poster-card relative overflow-hidden rounded-[1.45rem] border bg-[#FFF8EF] p-5 text-[#2B0710] ${map.border} ${index % 2 ? "md:translate-y-7" : ""}`}>
+                return <article key={proposal.title} className={`interactive-lift poster-card relative overflow-hidden rounded-[1.45rem] border bg-[#FFF8EF] p-5 text-[#2B0710] ${map.border}`}>
                   <div className="flex items-start justify-between gap-3">
                     <span className="flex items-center gap-2 text-[0.6rem] font-black tracking-[0.1em] text-[#700A13]"><span className={`size-2.5 rounded-full ${map.dot}`} /> 44/ PROP 0{index + 1} · {map.label}</span>
                     <span className="rounded-full bg-[#F4E0D5] px-2 py-1 text-[0.62rem] font-extrabold text-[#6D3940]">{proposal.area}</span>
@@ -210,7 +210,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="equipo" className="scroll-mt-20 bg-[#F4E0D5] py-20 text-[#2B0710] sm:py-28">
+        <section id="equipo" className="scroll-mt-20 bg-[#F4E0D5] py-16 text-[#2B0710] sm:py-20 lg:py-28">
           <div className="mx-auto grid max-w-6xl gap-9 px-4 sm:px-6 lg:grid-cols-[1.06fr_.94fr] lg:px-8">
             <div className="relative min-h-[460px] overflow-hidden rounded-[2rem] bg-[#700A13] p-5 shadow-[10px_11px_0_#2B0710]">
               <img src="/manus-storage/centro-equipo-stickers_df740828.jpg" alt="Collage de estudiantes que forman parte del Centro" className="absolute inset-0 size-full object-cover mix-blend-luminosity opacity-93" />
@@ -234,7 +234,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="agenda" className="scroll-mt-20 bg-[#2B0710] py-20 text-white sm:py-28">
+        <section id="agenda" className="scroll-mt-20 bg-[#2B0710] py-16 text-white sm:py-20 lg:py-28">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
               <div><div className="section-label"><CalendarDays className="size-3" /> Agenda y movidas</div><h2 className="display-face mt-4 text-4xl leading-[0.92] sm:text-5xl">EL RECREO<br />TAMBIÉN <span className="text-[#FFF0C6]">ORGANIZA.</span></h2></div>
@@ -255,7 +255,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-background py-20 sm:py-28">
+        <section className="bg-background py-16 sm:py-20 lg:py-28">
           <div className="mx-auto grid max-w-6xl gap-6 px-4 sm:px-6 lg:grid-cols-[.86fr_1.14fr] lg:px-8">
             <div className="rounded-[2rem] bg-[#D69A9A] p-6 text-[#2B0710] shadow-[9px_9px_0_#700A13] sm:p-8">
               <div className="flex items-center justify-between"><GraduationCap className="size-8" /><span className="sticker rotate-3 rounded-full px-3 py-1.5 text-[.62rem] font-black">CONEXIÓN UNGS</span></div>
@@ -272,16 +272,16 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="herramientas" className="scroll-mt-20 bg-[#F4E0D5] py-20 text-[#2B0710] sm:py-28">
+        <section id="herramientas" className="scroll-mt-20 bg-[#F4E0D5] py-16 text-[#2B0710] sm:py-20 lg:py-28">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl"><div className="section-label border-[#700A13]/35 text-[#700A13]"><Sparkles className="size-3" /> Caja de herramientas</div><h2 className="display-face mt-4 text-4xl leading-[.9] sm:text-5xl">LO QUE NECESITÁS, SIN DAR MIL VUELTAS.</h2></div>
             <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {resources.map(({ title, icon: Icon, note, color }, index) => <button key={title} onClick={() => toast.message(`${title}: próximamente`, { description: "Este acceso se conectará cuando estén listos los enlaces oficiales." })} className={`interactive-lift group relative min-h-[184px] rounded-[1.55rem] p-5 text-left shadow-[5px_5px_0_#2B0710] ${color} ${index === 1 ? "sm:-translate-y-5" : index === 3 ? "sm:translate-y-5" : ""}`}><span className="absolute right-4 top-4 text-[.58rem] font-black tracking-[.15em] opacity-55">44/ 0{index + 1}</span><div className="flex items-start justify-between"><Icon className="size-7" /><ArrowUpRightIcon /></div><p className="mt-12 text-lg font-extrabold leading-5">{title}</p><p className="mt-1 text-xs font-bold opacity-70">{note}</p></button>)}
+              {resources.map(({ title, icon: Icon, note, color }, index) => <button key={title} onClick={() => toast.message(`${title}: próximamente`, { description: "Este acceso se conectará cuando estén listos los enlaces oficiales." })} className={`interactive-lift group relative min-h-[174px] rounded-[1.55rem] p-5 text-left shadow-[5px_5px_0_#2B0710] ${color} ${index === 1 ? "lg:-translate-y-5" : index === 3 ? "lg:translate-y-5" : ""}`}><span className="absolute right-4 top-4 text-[.58rem] font-black tracking-[.15em] opacity-55">44/ 0{index + 1}</span><div className="flex items-start justify-between"><Icon className="size-7" /><ArrowUpRightIcon /></div><p className="mt-10 text-lg font-extrabold leading-5">{title}</p><p className="mt-1 text-xs font-bold opacity-70">{note}</p></button>)}
             </div>
           </div>
         </section>
 
-        <section id="participa" className="scroll-mt-20 bg-background py-20 sm:py-28">
+        <section id="participa" className="scroll-mt-20 bg-background py-16 sm:py-20 lg:py-28">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="poster-card relative overflow-hidden rounded-[1.8rem] bg-[#2B0710] p-7 text-white sm:p-10">
               <div className="absolute right-5 top-5 grid size-16 place-items-center overflow-hidden rounded-2xl bg-[#700A13] shadow-[4px_4px_0_#D69A9A]"><img src="/manus-storage/logo-lista-44_825fbf95.png" alt="Logo oficial de la Lista 44" className="size-full object-cover" /></div>
@@ -292,7 +292,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="border-t border-white/10 bg-[#2B0710] py-16 text-white sm:py-20">
+        <section className="border-t border-white/10 bg-[#2B0710] py-14 text-white sm:py-16 lg:py-20">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8"><div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><span className="text-[.65rem] font-black tracking-[.14em] text-[#FFF0C6]">CANALES OFICIALES</span><h2 className="display-face mt-3 text-3xl leading-[.92] sm:text-4xl">CUANDO ESTÉ, LO VAS A VER ACÁ.</h2></div><Instagram className="size-7 text-[#FFF0C6]" /></div>
             <div className="mt-8 grid gap-3 sm:grid-cols-[1.25fr_.75fr]">
               <div className="rounded-[1.5rem] border border-white/10 bg-[#4B121B] p-6"><p className="text-[.62rem] font-black tracking-[.16em] text-[#FFF0C6]">REDES Y NOVEDADES</p><p className="mt-4 max-w-lg text-lg font-extrabold leading-6">Todavía no hay un enlace oficial publicado. Cuando esté disponible, este bloque se conecta al canal real de la Lista 044.</p></div>

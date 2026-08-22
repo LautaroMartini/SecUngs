@@ -122,6 +122,10 @@
 }
 
 @keyframes entry { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+@media (max-width: 639px) {
+  .poster-card { box-shadow: 4px 4px 0 rgb(43 7 16 / 18%); }
+  .section-label { font-size: .6rem; letter-spacing: .08em; }
+}
 @media (min-width: 640px) { .container { padding-inline:1.5rem; } }
 @media (min-width: 1024px) { .container { max-width:1280px; padding-inline:2rem; } }
 @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; transition-duration:.01ms!important; } }
