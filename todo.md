@@ -19,3 +19,5 @@
 - [x] Mejorar la simetría de grillas, tarjetas y márgenes en tabletas y escritorio.
 - [x] Validar la interfaz en celular pequeño, tableta y escritorio ancho.
 - [x] Corregir la superposición en las tarjetas de Novedades.
+- [x] Retirar las imágenes generadas de los marcos visuales.
+- [x] Conservar marcos, etiquetas y espacios preparados para fotografías reales.

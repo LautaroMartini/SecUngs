@@ -161,11 +161,7 @@ export default function Home() {
             <div className="entry entry-delay-2 relative mx-auto w-full max-w-[660px] pb-3 lg:pb-0">
               <div className="absolute -left-1 top-5 z-20 -rotate-6 rounded-xl bg-[#FFF0C6] px-3 py-2 text-xs font-black text-[#2B0710] shadow-[3px_3px_0_#D69A9A]">IDEAS EN MOVIMIENTO</div>
               <div className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-[#4B121B] p-2 shadow-[12px_13px_0_#941C25] sm:p-3">
-                <img src="/manus-storage/centro-hero-campus-amplificado_a54dc287.jpg" alt="Estudiantes organizando ideas en una cartelera del campus" className="aspect-[16/11] w-full rounded-[1.45rem] object-cover" />
-                <div className="absolute inset-x-3 bottom-3 flex items-end justify-between rounded-b-[1.4rem] bg-gradient-to-t from-[#2B0710]/82 via-[#2B0710]/5 to-transparent px-4 pb-4 pt-12 sm:inset-x-4 sm:bottom-4">
-                  <span className="max-w-[13rem] text-sm font-extrabold leading-5 text-white">Que la escuela no se te pase de largo.</span>
-                  <span className="sticker rotate-6 rounded-full bg-[#78959A] px-2 py-1 text-[0.6rem] font-black text-[#FFF0C6]">EN EQUIPO</span>
-                </div>
+                <div aria-label="Marco reservado para futura fotografía" className="aspect-[16/11] w-full rounded-[1.45rem] border border-dashed border-[#FFF0C6]/35 bg-[#5A1520]" />
               </div>
               <div className="absolute -bottom-2 -left-2 flex size-20 rotate-12 items-center justify-center overflow-hidden rounded-2xl border-2 border-[#FFF0C6] bg-[#700A13] text-[#2B0710] shadow-[4px_4px_0_#D69A9A] sm:-left-7 sm:size-24"><img src="/manus-storage/logo-lista-44_825fbf95.png" alt="Logo de la Lista 44" className="size-full object-cover" /></div>
             </div>
@@ -213,8 +209,7 @@ export default function Home() {
         <section id="equipo" className="scroll-mt-20 bg-[#F4E0D5] py-16 text-[#2B0710] sm:py-20 lg:py-28">
           <div className="mx-auto grid max-w-6xl gap-9 px-4 sm:px-6 lg:grid-cols-[1.06fr_.94fr] lg:px-8">
             <div className="relative min-h-[460px] overflow-hidden rounded-[2rem] bg-[#700A13] p-5 shadow-[10px_11px_0_#2B0710]">
-              <img src="/manus-storage/centro-equipo-stickers_df740828.jpg" alt="Collage de estudiantes que forman parte del Centro" className="absolute inset-0 size-full object-cover mix-blend-luminosity opacity-93" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#003e6b] via-transparent to-[#003e6b]/25" />
+              <div aria-label="Marco reservado para futura fotografía de la comisión" className="absolute inset-5 rounded-[1.55rem] border border-dashed border-[#FFF0C6]/35 bg-[#5A1520]" />
               <div className="relative z-10 flex h-full min-h-[420px] flex-col justify-between">
                 <div className="flex justify-between"><span className="sticker -rotate-3 rounded-lg bg-[#FFF0C6] px-3 py-2 text-xs font-black text-[#2B0710]">NO HAY UNA SOLA VOZ</span><span className="rounded-full bg-white/90 px-3 py-2 text-xs font-black text-[#700A13]">EL EQUIPO</span></div>
                 <div className="grid gap-2 sm:grid-cols-3">
@@ -263,7 +258,7 @@ export default function Home() {
               <Button onClick={() => toast.message("Guía ampliada", { description: "La versión completa estará disponible en los links clave." })} className="mt-8 rounded-xl bg-[#700A13] px-5 py-6 text-sm font-extrabold text-white hover:bg-[#941C25]">Ver guía rápida <ArrowRight className="ml-2 size-4" /></Button>
             </div>
             <div className="relative min-h-[380px] overflow-hidden rounded-[2rem] bg-[#F4E0D5] shadow-[9px_9px_0_rgba(112,10,19,.18)]">
-              <img src="/manus-storage/centro-campus-guia_3fde1d46.jpg" alt="Estudiante explorando espacios del campus" className="absolute inset-0 size-full object-cover" />
+              <div aria-label="Marco reservado para futura fotografía del campus" className="absolute inset-0 m-3 rounded-[1.45rem] border border-dashed border-[#700A13]/35 bg-[#EAB9B3]" />
               <div className="absolute inset-x-4 bottom-4 grid grid-cols-3 gap-2 sm:inset-x-6 sm:bottom-6">
                 {[{ icon: Library, label: "Biblioteca" }, { icon: BookOpen, label: "Talleres" }, { icon: CircleHelp, label: "Orientación" }].map(({ icon: Icon, label }) => <div key={label} className="rounded-2xl bg-[#2B0710]/88 p-3 text-center text-white backdrop-blur-sm"><Icon className="mx-auto size-4 text-[#FFF0C6]" /><p className="mt-1 text-[.62rem] font-extrabold">{label}</p></div>)}
               </div>
