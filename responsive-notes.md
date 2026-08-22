@@ -11,3 +11,7 @@ Se suavizó la escala del titular principal en móviles, se redujo el espacio ve
 ## Validación posterior
 
 Las vistas **320 × 568** y **768 × 1024** conservan lectura clara, jerarquía consistente y márgenes estables. Las tarjetas no muestran desbordamientos, las propuestas mantienen una grilla pareja en tableta y los recursos ya no rompen el eje visual con desplazamientos antes del ancho de escritorio.
+
+## Corrección de Novedades
+
+Las tarjetas de Novedades pasaron a una composición flexible: fecha y categoría ocupan la cabecera, el título usa una escala contenida, el enlace queda después del contenido y el numeral decorativo se mantiene detrás de la lectura. La revisión en escritorio y móvil confirmó que ya no hay superposición entre estos elementos.

@@ -243,12 +243,11 @@ export default function Home() {
             <div className="mt-10 grid gap-4 lg:grid-cols-3">
               {events.map((event, i) => {
                 const palette = event.tone === "blue" ? "bg-[#700A13]" : event.tone === "gold" ? "bg-[#FFF0C6] text-[#2B0710]" : "bg-[#4B121B]";
-                return <article key={event.title} className={`interactive-lift ${palette} relative min-h-[260px] overflow-hidden rounded-[1.75rem] p-6 shadow-[6px_6px_0_rgba(255,255,255,.18)]`}>
-                  <span className="text-xs font-black tracking-[0.16em]">{event.date}</span>
-                  <span className="absolute right-5 top-5 rounded-full border border-current/30 px-2.5 py-1 text-[0.6rem] font-black">{event.type}</span>
-                  <h3 className="display-face mt-16 max-w-[15rem] text-3xl leading-[.94]">{event.title}</h3>
-                  <button onClick={() => toast.message("Anotación guardada", { description: "Te vamos a avisar cuando haya novedades." })} className="absolute bottom-5 left-6 flex items-center gap-1.5 text-xs font-extrabold underline-offset-4 hover:underline">Me interesa <ArrowRight className="size-3.5" /></button>
-                  <span className="absolute -bottom-7 -right-2 text-8xl font-black opacity-15">0{i + 1}</span>
+                return <article key={event.title} className={`interactive-lift ${palette} relative flex min-h-[296px] flex-col overflow-hidden rounded-[1.75rem] p-5 shadow-[6px_6px_0_rgba(255,255,255,.18)] sm:p-6`}>
+                  <div className="relative z-10 flex items-start justify-between gap-3"><span className="pt-1 text-xs font-black tracking-[0.16em]">{event.date}</span><span className="shrink-0 rounded-full border border-current/30 px-2.5 py-1 text-[0.6rem] font-black">{event.type}</span></div>
+                  <h3 className="relative z-10 mt-14 max-w-[15rem] text-[clamp(1.65rem,2.35vw,2.25rem)] font-black leading-[.96] tracking-[-0.055em]">{event.title}</h3>
+                  <div className="relative z-10 mt-auto pt-7"><button onClick={() => toast.message("Anotación guardada", { description: "Te vamos a avisar cuando haya novedades." })} className="flex items-center gap-1.5 text-xs font-extrabold underline-offset-4 hover:underline">Me interesa <ArrowRight className="size-3.5" /></button></div>
+                  <span aria-hidden="true" className="pointer-events-none absolute bottom-3 right-4 z-0 text-7xl font-black leading-none opacity-10">0{i + 1}</span>
                 </article>;
               })}
             </div>
