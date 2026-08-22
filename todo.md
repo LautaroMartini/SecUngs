@@ -8,3 +8,7 @@
 - [x] Redactar e incorporar las propuestas reales de la Lista 044.
 - [x] Validar la presentación de propuestas en escritorio y celular.
 - [x] Incorporar la propuesta de torneo de fútbol entre cursos.
+- [x] Incorporar el logo oficial de la Lista 44.
+- [x] Reemplazar la paleta azul/dorada por el sistema visual bordó de la Lista 44.
+- [x] Actualizar el nombre institucional y el lema de autoría estudiantil.
+- [x] Verificar la versión bordó en escritorio y celular.

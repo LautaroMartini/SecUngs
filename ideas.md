@@ -74,3 +74,14 @@ Un monograma gráfico **CE/** como dos bloques enfrentados que abren una convers
 - El primer pantallazo pone **proponer y votar** antes que presentar institucionalmente al Centro.
 - El monograma **CE/** actúa como sello recurrente en navegación, módulos participativos y cierre; debe reconocerse aun sin el wordmark.
 - El dorado eléctrico es exclusivamente la tinta de activación. Menta y coral se limitan a estados puntuales, sin competir con el sistema base azul noche + azul UNGS.
+
+## Adaptación de identidad — Lista 44
+
+La identidad de Lista 44 reemplaza el sistema azul/dorado anterior. La base pasa a ser **bordó profundo `#700A13`**, acompañado por bordó vino `#941C25`, rosa empolvado `#D69A9A`, crema cálida `#FFF0C6` y gris verdoso apagado `#78959A` como acento secundario. El bordó intenso concentra encabezados, fondos y llamados principales; los tonos crema y rosa amplían legibilidad y cercanía, mientras que el gris verdoso se reserva para etiquetas y elementos de apoyo. El logo oficial CDF es el signo prioritario en cabecera, sello hero, favicon y cierre. El nombre siempre se desarrolla en dos líneas: **Centro de Estudiantes** / **Secundaria UNGS**. El lema institucional queda fijado como: **“Hecho por estudiantes · Para estudiantes”.**
+
+### Refuerzos de identidad aplicados
+
+- El logo CDF y el lockup “Centro de Estudiantes / Secundaria UNGS” se repiten en cabecera, hero y cierre como sistema de marca.
+- Las secciones de lectura, especialmente propuestas, usan crema y rosa para cortar las masas bordó y dar jerarquía funcional a la página.
+- Las piezas de propuesta incorporan numeración, etiquetas y sellos “44/” para extender el lenguaje físico de cartelera más allá del hero.
+- La participación se anuncia como un canal próximo y central, sin simular formularios o servicios que todavía no están habilitados.

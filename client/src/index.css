@@ -2,8 +2,8 @@
 @import "tw-animate-css";
 
 /*
- * Campus Amplificado — neo-brutalismo editorial suave: azul noche, dorado eléctrico,
- * marcos de afiche y ritmo bento asimétrico. Cada elección debe reforzar participación visible.
+ * Lista 44 — cartelera editorial bordó: crema cálida, rosa empolvado y acentos gris verdoso.
+ * El sistema debe reforzar la identidad oficial de la lista y la lectura desde el celular.
  */
 @custom-variant dark (&:is(.dark *));
 
@@ -40,64 +40,64 @@
 
 :root {
   --radius: 1.35rem;
-  --primary: oklch(0.72 0.16 72);
-  --primary-foreground: oklch(0.15 0.01 260);
-  --background: oklch(0.97 0.006 90);
-  --foreground: oklch(0.17 0.016 258);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.17 0.016 258);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.17 0.016 258);
-  --secondary: oklch(0.94 0.02 245);
-  --secondary-foreground: oklch(0.22 0.03 255);
-  --muted: oklch(0.92 0.012 88);
-  --muted-foreground: oklch(0.42 0.025 250);
-  --accent: oklch(0.93 0.11 84);
-  --accent-foreground: oklch(0.17 0.016 258);
+  --primary: oklch(0.43 0.15 20);
+  --primary-foreground: oklch(0.97 0.04 85);
+  --background: oklch(0.96 0.03 82);
+  --foreground: oklch(0.25 0.07 20);
+  --card: oklch(0.99 0.015 82);
+  --card-foreground: oklch(0.25 0.07 20);
+  --popover: oklch(0.99 0.015 82);
+  --popover-foreground: oklch(0.25 0.07 20);
+  --secondary: oklch(0.9 0.04 20);
+  --secondary-foreground: oklch(0.3 0.08 20);
+  --muted: oklch(0.92 0.03 70);
+  --muted-foreground: oklch(0.46 0.05 20);
+  --accent: oklch(0.82 0.07 20);
+  --accent-foreground: oklch(0.25 0.07 20);
   --destructive: oklch(0.62 0.22 28);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.21 0.025 255 / 18%);
-  --input: oklch(0.21 0.025 255 / 18%);
-  --ring: oklch(0.61 0.17 248);
-  --chart-1: oklch(0.61 0.17 248);
-  --chart-2: oklch(0.72 0.16 72);
-  --chart-3: oklch(0.72 0.13 164);
-  --chart-4: oklch(0.68 0.18 30);
-  --chart-5: oklch(0.76 0.1 100);
+  --border: oklch(0.35 0.08 20 / 20%);
+  --input: oklch(0.35 0.08 20 / 20%);
+  --ring: oklch(0.43 0.15 20);
+  --chart-1: oklch(0.43 0.15 20);
+  --chart-2: oklch(0.68 0.11 20);
+  --chart-3: oklch(0.6 0.05 205);
+  --chart-4: oklch(0.85 0.06 80);
+  --chart-5: oklch(0.55 0.12 20);
 }
 
 .dark {
-  --primary: oklch(0.77 0.16 72);
-  --primary-foreground: oklch(0.16 0.017 254);
-  --background: oklch(0.15 0.017 254);
-  --foreground: oklch(0.96 0.006 90);
-  --card: oklch(0.2 0.021 252);
-  --card-foreground: oklch(0.96 0.006 90);
-  --popover: oklch(0.2 0.021 252);
-  --popover-foreground: oklch(0.96 0.006 90);
-  --secondary: oklch(0.26 0.035 248);
-  --secondary-foreground: oklch(0.93 0.014 90);
-  --muted: oklch(0.24 0.022 252);
-  --muted-foreground: oklch(0.72 0.017 244);
-  --accent: oklch(0.72 0.16 72);
-  --accent-foreground: oklch(0.16 0.017 254);
+  --primary: oklch(0.87 0.06 80);
+  --primary-foreground: oklch(0.25 0.07 20);
+  --background: oklch(0.2 0.055 20);
+  --foreground: oklch(0.96 0.03 82);
+  --card: oklch(0.26 0.065 20);
+  --card-foreground: oklch(0.96 0.03 82);
+  --popover: oklch(0.26 0.065 20);
+  --popover-foreground: oklch(0.96 0.03 82);
+  --secondary: oklch(0.32 0.07 20);
+  --secondary-foreground: oklch(0.94 0.03 82);
+  --muted: oklch(0.29 0.055 20);
+  --muted-foreground: oklch(0.76 0.05 55);
+  --accent: oklch(0.72 0.1 20);
+  --accent-foreground: oklch(0.22 0.06 20);
   --destructive: oklch(0.68 0.19 27);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.96 0.006 90 / 14%);
-  --input: oklch(0.96 0.006 90 / 18%);
-  --ring: oklch(0.62 0.17 248);
-  --chart-1: oklch(0.62 0.17 248);
-  --chart-2: oklch(0.77 0.16 72);
-  --chart-3: oklch(0.72 0.13 164);
-  --chart-4: oklch(0.68 0.18 30);
-  --chart-5: oklch(0.76 0.1 100);
+  --border: oklch(0.96 0.03 82 / 14%);
+  --input: oklch(0.96 0.03 82 / 18%);
+  --ring: oklch(0.77 0.1 20);
+  --chart-1: oklch(0.77 0.1 20);
+  --chart-2: oklch(0.87 0.06 80);
+  --chart-3: oklch(0.65 0.05 205);
+  --chart-4: oklch(0.72 0.1 20);
+  --chart-5: oklch(0.82 0.05 80);
 }
 
 @layer base {
   * { @apply border-border outline-ring/50; }
   html { scroll-behavior: smooth; }
   body { @apply bg-background text-foreground; font-family: "Manrope", sans-serif; }
-  ::selection { background: #f5a623; color: #0d1117; }
+  ::selection { background: #D69A9A; color: #2B0710; }
   button:not(:disabled), [role="button"]:not([aria-disabled="true"]), [type="button"]:not(:disabled), [type="submit"]:not(:disabled), a[href], select:not(:disabled), input[type="checkbox"]:not(:disabled), input[type="radio"]:not(:disabled) { @apply cursor-pointer; }
 }
 
@@ -108,9 +108,9 @@
   .poster-grid { background-image: linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px), linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px); background-size: 28px 28px; }
   .grain::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .13; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.58'/%3E%3C/svg%3E"); mix-blend-mode: soft-light; }
   .poster-card { border: 1px solid rgb(255 255 255 / 14%); box-shadow: 7px 7px 0 rgb(0 0 0 / 20%); }
-  .section-label { display:inline-flex; align-items:center; gap:.5rem; border-radius:999px; border:1px solid rgb(245 166 35 / 45%); padding:.42rem .72rem; color:#f5a623; font-size:.67rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+  .section-label { display:inline-flex; align-items:center; gap:.5rem; border-radius:999px; border:1px solid rgb(255 240 198 / 45%); padding:.42rem .72rem; color:#FFF0C6; font-size:.67rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
   .marker-underline { position:relative; display:inline-block; z-index:0; }
-  .marker-underline::after { content:""; position:absolute; bottom:.03em; left:-.04em; z-index:-1; width:108%; height:.26em; border-radius:99px 14px 99px 20px; background:#f5a623; transform:rotate(-2deg); }
+  .marker-underline::after { content:""; position:absolute; bottom:.03em; left:-.04em; z-index:-1; width:108%; height:.26em; border-radius:99px 14px 99px 20px; background:#D69A9A; transform:rotate(-2deg); }
   .sticker { border:2px solid currentColor; box-shadow:3px 3px 0 currentColor; }
   .interactive-lift { transition: transform 200ms cubic-bezier(.23,1,.32,1), box-shadow 200ms cubic-bezier(.23,1,.32,1), border-color 200ms cubic-bezier(.23,1,.32,1); }
   .interactive-lift:hover { transform:translateY(-4px) rotate(-.2deg); }

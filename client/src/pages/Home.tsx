@@ -1,6 +1,6 @@
 /**
- * Campus Amplificado — landing editorial juvenil: cartelera bento asimétrica, azul noche y dorado eléctrico.
- * Las acciones de proponer, votar y encontrar recursos permanecen por encima de lo institucional.
+ * Lista 44 — cartelera editorial bordó: crema cálida, rosa empolvado y logo oficial como firma visual.
+ * La identidad prioriza una lectura cercana y clara para el Centro de Estudiantes de Secundaria UNGS.
  */
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/contexts/ThemeContext";
@@ -53,10 +53,10 @@ const events = [
 ];
 
 const resources = [
-  { title: "Apuntes", icon: NotebookTabs, note: "En preparación", color: "bg-[#005A9C] text-white" },
-  { title: "Horarios", icon: CalendarDays, note: "En preparación", color: "bg-[#f5a623] text-[#0d1117]" },
-  { title: "Calendario", icon: ClipboardPenLine, note: "En preparación", color: "bg-[#10213a] text-white" },
-  { title: "Material de estudio", icon: FileText, note: "En preparación", color: "bg-[#dcecf8] text-[#0d1117]" },
+  { title: "Apuntes", icon: NotebookTabs, note: "En preparación", color: "bg-[#700A13] text-white" },
+  { title: "Horarios", icon: CalendarDays, note: "En preparación", color: "bg-[#FFF0C6] text-[#2B0710]" },
+  { title: "Calendario", icon: ClipboardPenLine, note: "En preparación", color: "bg-[#4B121B] text-white" },
+  { title: "Material de estudio", icon: FileText, note: "En preparación", color: "bg-[#F4E0D5] text-[#2B0710]" },
 ];
 
 const committee = [
@@ -100,96 +100,99 @@ export default function Home() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
       <header className={`fixed inset-x-0 top-3 z-50 px-3 transition-all duration-300 ${scrolled ? "top-0 px-0" : ""}`}>
-        <nav className={`mx-auto flex max-w-6xl items-center justify-between border px-3 py-2.5 backdrop-blur-xl transition-all duration-300 sm:px-4 ${scrolled ? "max-w-none rounded-none border-x-0 border-t-0 bg-[#0d1117]/93 shadow-xl dark:bg-[#0d1117]/93 light:bg-[#fffdf8]/94" : "rounded-[1.35rem] border-white/15 bg-[#0d1117]/72 shadow-[0_12px_35px_rgba(0,0,0,.22)] light:border-[#0d1117]/10 light:bg-[#fffdf8]/82"}`}>
+        <nav className={`mx-auto flex max-w-6xl items-center justify-between border px-3 py-2.5 backdrop-blur-xl transition-all duration-300 sm:px-4 ${scrolled ? "max-w-none rounded-none border-x-0 border-t-0 bg-[#2B0710]/93 shadow-xl dark:bg-[#2B0710]/93 light:bg-[#fff7ed]/94" : "rounded-[1.35rem] border-white/15 bg-[#2B0710]/72 shadow-[0_12px_35px_rgba(43,7,16,.28)] light:border-[#2B0710]/10 light:bg-[#fff7ed]/82"}`}>
           <button onClick={() => jumpTo("inicio")} className="group flex items-center gap-2 text-left" aria-label="Ir al inicio">
-            <span className="flex size-10 items-center justify-center rounded-xl bg-[#f5a623] shadow-[3px_3px_0_#005A9C] transition-transform duration-200 group-hover:-rotate-6">
-              <img src="/manus-storage/centro-ce-symbol_eb5181bc.png" alt="" className="size-7" />
+            <span className="flex size-10 items-center justify-center overflow-hidden rounded-xl bg-[#700A13] ring-1 ring-[#FFF0C6]/60 shadow-[3px_3px_0_#D69A9A] transition-transform duration-200 group-hover:-rotate-6">
+              <img src="/manus-storage/logo-lista-44_825fbf95.png" alt="Logo de la Lista 44" className="size-full object-cover" />
             </span>
             <span className="leading-none">
-              <strong className="display-face block text-[0.85rem] tracking-[-0.05em] text-white light:text-[#0d1117]">CENTRO</strong>
-              <span className="block pt-0.5 text-[0.56rem] font-extrabold tracking-[0.18em] text-[#f5a623]">SECUNDARIA UNGS</span>
+              <strong className="display-face block text-[0.68rem] leading-[.88] tracking-[-0.04em] text-white light:text-[#2B0710]">CENTRO DE<br />ESTUDIANTES</strong>
+              <span className="block pt-1 text-[0.53rem] font-extrabold tracking-[0.16em] text-[#FFF0C6]">SECUNDARIA UNGS</span>
             </span>
           </button>
 
           <div className="hidden items-center gap-5 lg:flex">
-            {navLinks.map(([label, id]) => <button key={id} onClick={() => jumpTo(id)} className="text-xs font-extrabold text-white/70 transition-colors hover:text-[#f5a623] light:text-[#0d1117]/68 light:hover:text-[#005A9C]">{label}</button>)}
+            {navLinks.map(([label, id]) => <button key={id} onClick={() => jumpTo(id)} className="text-xs font-extrabold text-white/70 transition-colors hover:text-[#FFF0C6] light:text-[#2B0710]/68 light:hover:text-[#700A13]">{label}</button>)}
           </div>
 
           <div className="flex items-center gap-1.5">
-            <button onClick={toggleTheme} className="grid size-9 place-items-center rounded-xl border border-white/15 text-white/80 transition hover:bg-white/10 light:border-[#0d1117]/10 light:text-[#0d1117] light:hover:bg-[#005A9C]/10" aria-label="Cambiar modo de color">
+            <button onClick={toggleTheme} className="grid size-9 place-items-center rounded-xl border border-white/15 text-white/80 transition hover:bg-white/10 light:border-[#2B0710]/10 light:text-[#2B0710] light:hover:bg-[#700A13]/10" aria-label="Cambiar modo de color">
               {theme === "dark" ? <Sun className="size-4" /> : <Moon className="size-4" />}
             </button>
-            <Button onClick={() => jumpTo("equipo")} className="hidden rounded-xl bg-[#f5a623] px-4 text-xs font-extrabold text-[#0d1117] shadow-[3px_3px_0_#005A9C] hover:bg-[#ffd26f] sm:inline-flex">
+            <Button onClick={() => jumpTo("equipo")} className="hidden rounded-xl bg-[#FFF0C6] px-4 text-xs font-extrabold text-[#2B0710] shadow-[3px_3px_0_#D69A9A] hover:bg-white sm:inline-flex">
               Lista 044 <ArrowDownRight className="ml-1.5 size-3.5" />
             </Button>
-            <button onClick={() => setMobileMenuOpen((open) => !open)} className="grid size-9 place-items-center rounded-xl border border-white/15 text-white lg:hidden light:border-[#0d1117]/10 light:text-[#0d1117]" aria-label="Abrir menú" aria-expanded={mobileMenuOpen}>
+            <button onClick={() => setMobileMenuOpen((open) => !open)} className="grid size-9 place-items-center rounded-xl border border-white/15 text-white lg:hidden light:border-[#2B0710]/10 light:text-[#2B0710]" aria-label="Abrir menú" aria-expanded={mobileMenuOpen}>
               {mobileMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
             </button>
           </div>
         </nav>
         {mobileMenuOpen && (
           <div className="mx-auto mt-2 max-w-6xl rounded-[1.35rem] border border-white/10 bg-[#101827]/95 p-3 shadow-2xl backdrop-blur-xl lg:hidden">
-            {navLinks.map(([label, id]) => <button key={id} onClick={() => { jumpTo(id); setMobileMenuOpen(false); }} className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-sm font-extrabold text-white hover:bg-white/10"><span>{label}</span><ChevronRight className="size-4 text-[#f5a623]" /></button>)}
-            <Button onClick={() => { jumpTo("equipo"); setMobileMenuOpen(false); }} className="mt-2 w-full rounded-xl bg-[#f5a623] font-extrabold text-[#0d1117]">Conocé la Lista 044</Button>
+            {navLinks.map(([label, id]) => <button key={id} onClick={() => { jumpTo(id); setMobileMenuOpen(false); }} className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-sm font-extrabold text-white hover:bg-white/10"><span>{label}</span><ChevronRight className="size-4 text-[#FFF0C6]" /></button>)}
+            <Button onClick={() => { jumpTo("equipo"); setMobileMenuOpen(false); }} className="mt-2 w-full rounded-xl bg-[#FFF0C6] font-extrabold text-[#2B0710]">Conocé la Lista 044</Button>
           </div>
         )}
       </header>
 
       <main id="inicio">
-        <section className="poster-grid grain relative isolate overflow-hidden bg-[#0d1117] pb-10 pt-28 text-white sm:pb-14 sm:pt-32">
-          <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_9%_18%,rgba(0,90,156,.62),transparent_33%),radial-gradient(circle_at_80%_8%,rgba(245,166,35,.15),transparent_20%)]" />
+        <section className="poster-grid grain relative isolate overflow-hidden bg-[#2B0710] pb-10 pt-28 text-white sm:pb-14 sm:pt-32">
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_9%_18%,rgba(148,28,37,.82),transparent_33%),radial-gradient(circle_at_80%_8%,rgba(255,240,198,.15),transparent_20%)]" />
           <div className="mx-auto grid max-w-6xl gap-9 px-4 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:px-8">
             <div className="relative z-10 pt-3 lg:pt-9">
-              <div className="entry section-label"><Zap className="size-3" /> Centro de Estudiantes 2026</div>
+              <div className="entry flex w-fit items-center gap-3 rounded-[1.05rem] border border-[#FFF0C6]/35 bg-[#700A13]/45 p-2.5 pr-4 shadow-[3px_3px_0_rgba(214,154,154,.62)]">
+                <img src="/manus-storage/logo-lista-44_825fbf95.png" alt="Logo oficial CDF de la Lista 44" className="size-11 rounded-lg object-cover" />
+                <span className="leading-none"><span className="block text-[.58rem] font-black tracking-[.18em] text-[#FFF0C6]">LISTA 44 · CDF</span><strong className="mt-1 block text-xs font-extrabold text-white">Centro de Estudiantes</strong><span className="mt-0.5 block text-[.58rem] font-bold tracking-[.1em] text-white/70">SECUNDARIA UNGS</span></span>
+              </div>
               <h1 className="entry entry-delay-1 display-face mt-5 max-w-xl text-[clamp(3.1rem,9vw,7.3rem)] leading-[0.82] text-white">
-                EL CENTRO<br />LO HACEMOS<br /><span className="marker-underline text-[#0d1117]">TODXS.</span>
+                EL CENTRO<br />LO HACEMOS<br /><span className="marker-underline text-[#2B0710]">TODXS.</span>
               </h1>
               <p className="entry entry-delay-2 mt-7 max-w-md text-base font-medium leading-7 text-white/76 sm:text-lg">Ideas que llegan, planes que se mueven y una secundaria que se organiza entre todos.</p>
               <div className="entry entry-delay-3 mt-8 flex flex-wrap gap-3">
-                <Button onClick={() => jumpTo("equipo")} className="rounded-xl bg-[#f5a623] px-5 py-6 text-sm font-extrabold text-[#0d1117] shadow-[4px_4px_0_#005A9C] hover:bg-[#ffd26f]">Conocé la Lista 044 <ArrowDownRight className="ml-2 size-4" /></Button>
+                <Button onClick={() => jumpTo("equipo")} className="rounded-xl bg-[#FFF0C6] px-5 py-6 text-sm font-extrabold text-[#2B0710] shadow-[4px_4px_0_#D69A9A] hover:bg-white">Conocé la Lista 044 <ArrowDownRight className="ml-2 size-4" /></Button>
                 <Button onClick={() => jumpTo("propuestas")} variant="outline" className="rounded-xl border-white/25 bg-white/5 px-5 py-6 text-sm font-extrabold text-white hover:bg-white/12 hover:text-white">Lo que estamos armando <ArrowRight className="ml-2 size-4" /></Button>
               </div>
               <div className="mt-9 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-bold text-white/55">
-                <span className="flex items-center gap-1.5"><span className="size-2 rounded-full bg-[#92e2c6]" /> Hecho entre estudiantes</span>
-                <span className="flex items-center gap-1.5"><span className="size-2 rounded-full bg-[#f5a623]" /> Para vivir la escuela</span>
+                <span className="flex items-center gap-1.5"><span className="size-2 rounded-full bg-[#D69A9A]" /> Hecho por estudiantes</span>
+                <span className="flex items-center gap-1.5"><span className="size-2 rounded-full bg-[#FFF0C6]" /> Para estudiantes</span>
               </div>
             </div>
 
             <div className="entry entry-delay-2 relative mx-auto w-full max-w-[660px] pb-3 lg:pb-0">
-              <div className="absolute -left-1 top-5 z-20 -rotate-6 rounded-xl bg-[#f5a623] px-3 py-2 text-xs font-black text-[#0d1117] shadow-[3px_3px_0_#005A9C]">IDEAS EN MOVIMIENTO</div>
-              <div className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-[#162a44] p-2 shadow-[12px_13px_0_#005A9C] sm:p-3">
+              <div className="absolute -left-1 top-5 z-20 -rotate-6 rounded-xl bg-[#FFF0C6] px-3 py-2 text-xs font-black text-[#2B0710] shadow-[3px_3px_0_#D69A9A]">IDEAS EN MOVIMIENTO</div>
+              <div className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-[#4B121B] p-2 shadow-[12px_13px_0_#941C25] sm:p-3">
                 <img src="/manus-storage/centro-hero-campus-amplificado_a54dc287.jpg" alt="Estudiantes organizando ideas en una cartelera del campus" className="aspect-[16/11] w-full rounded-[1.45rem] object-cover" />
-                <div className="absolute inset-x-3 bottom-3 flex items-end justify-between rounded-b-[1.4rem] bg-gradient-to-t from-[#0d1117]/82 via-[#0d1117]/5 to-transparent px-4 pb-4 pt-12 sm:inset-x-4 sm:bottom-4">
+                <div className="absolute inset-x-3 bottom-3 flex items-end justify-between rounded-b-[1.4rem] bg-gradient-to-t from-[#2B0710]/82 via-[#2B0710]/5 to-transparent px-4 pb-4 pt-12 sm:inset-x-4 sm:bottom-4">
                   <span className="max-w-[13rem] text-sm font-extrabold leading-5 text-white">Que la escuela no se te pase de largo.</span>
-                  <span className="sticker rotate-6 rounded-full bg-[#92e2c6] px-2 py-1 text-[0.6rem] font-black text-[#0d1117]">EN EQUIPO</span>
+                  <span className="sticker rotate-6 rounded-full bg-[#78959A] px-2 py-1 text-[0.6rem] font-black text-[#FFF0C6]">EN EQUIPO</span>
                 </div>
               </div>
-              <div className="absolute -bottom-2 -left-2 flex size-20 rotate-12 items-center justify-center rounded-2xl border-2 border-[#0d1117] bg-[#f5a623] text-[#0d1117] shadow-[4px_4px_0_#005A9C] sm:-left-7 sm:size-24"><img src="/manus-storage/centro-ce-symbol_eb5181bc.png" alt="Sello CE" className="size-12" /></div>
+              <div className="absolute -bottom-2 -left-2 flex size-20 rotate-12 items-center justify-center overflow-hidden rounded-2xl border-2 border-[#FFF0C6] bg-[#700A13] text-[#2B0710] shadow-[4px_4px_0_#D69A9A] sm:-left-7 sm:size-24"><img src="/manus-storage/logo-lista-44_825fbf95.png" alt="Logo de la Lista 44" className="size-full object-cover" /></div>
             </div>
           </div>
         </section>
 
-        <section aria-label="Mini cartelera" className="relative z-10 -mt-1 border-y border-[#0d1117]/10 bg-[#f5a623] text-[#0d1117] dark:border-white/10">
+        <section aria-label="Mini cartelera" className="relative z-10 -mt-1 border-y border-[#2B0710]/10 bg-[#D69A9A] text-[#2B0710] dark:border-white/10">
           <div className="mx-auto flex max-w-6xl items-center gap-5 overflow-x-auto px-4 py-3.5 sm:px-6 lg:px-8">
             <span className="shrink-0 text-xs font-black tracking-[0.16em]">LA POSTA DEL DÍA</span>
-            <span className="h-5 w-px shrink-0 bg-[#0d1117]/30" />
+            <span className="h-5 w-px shrink-0 bg-[#2B0710]/30" />
             <p className="shrink-0 text-sm font-bold">Este espacio se está organizando con la comisión de la Lista 044.</p>
-            <button onClick={() => jumpTo("equipo")} className="ml-auto flex shrink-0 items-center gap-1 rounded-full bg-[#0d1117] px-3 py-1.5 text-xs font-extrabold text-white transition hover:translate-x-0.5">Ver comisión <ArrowRight className="size-3.5" /></button>
+            <button onClick={() => jumpTo("equipo")} className="ml-auto flex shrink-0 items-center gap-1 rounded-full bg-[#700A13] px-3 py-1.5 text-xs font-extrabold text-white transition hover:translate-x-0.5">Ver comisión <ArrowRight className="size-3.5" /></button>
           </div>
         </section>
 
-        <section id="propuestas" className="scroll-mt-20 bg-background py-20 sm:py-28">
+        <section id="propuestas" className="scroll-mt-20 bg-[#F4E0D5] py-20 text-[#2B0710] sm:py-28">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-9 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
               <div>
-                <div className="section-label"><Flag className="size-3" /> Propuestas · Lista 044</div>
-                <h2 className="display-face mt-4 text-4xl leading-[0.92] sm:text-5xl">IDEAS PARA<br /><span className="text-[#005A9C] dark:text-[#78b9ff]">MOVER</span> LA ESCUELA.</h2>
-                <p className="mt-5 max-w-sm text-sm font-medium leading-6 text-muted-foreground">Son propuestas que queremos impulsar paso a paso, con información clara y participación de la comunidad cuando cada una se ponga en marcha.</p>
+                <div className="section-label border-[#700A13]/40 text-[#700A13]"><Flag className="size-3" /> Propuestas · Lista 044</div>
+                <h2 className="display-face mt-4 text-4xl leading-[0.92] sm:text-5xl">IDEAS PARA<br /><span className="text-[#700A13]">MOVER</span> LA ESCUELA.</h2>
+                <p className="mt-5 max-w-sm text-sm font-semibold leading-6 text-[#6D3940]">Son propuestas que queremos impulsar paso a paso. Cuando abramos los canales de ideas y ayuda, este será el lugar para seguirlas y sumarse.</p>
               </div>
               <div className="flex flex-wrap gap-2 lg:justify-end">
                 {(["todas", "en proceso", "próxima"] as const).map((filter) => {
                   const labels = { todas: "Todas", "en proceso": "En preparación", próxima: "A impulsar" };
-                  return <button key={filter} onClick={() => setProposalFilter(filter)} className={`rounded-full border px-3.5 py-2 text-xs font-extrabold transition ${proposalFilter === filter ? "border-[#0d1117] bg-[#0d1117] text-white dark:border-[#f5a623] dark:bg-[#f5a623] dark:text-[#0d1117]" : "border-border bg-card hover:border-[#f5a623]"}`}>{labels[filter]}</button>;
+                  return <button key={filter} onClick={() => setProposalFilter(filter)} className={`rounded-full border px-3.5 py-2 text-xs font-extrabold transition ${proposalFilter === filter ? "border-[#700A13] bg-[#700A13] text-white" : "border-[#700A13]/18 bg-white/70 text-[#2B0710] hover:border-[#D69A9A]"}`}>{labels[filter]}</button>;
                 })}
               </div>
             </div>
@@ -197,58 +200,58 @@ export default function Home() {
             <div className="mt-9 grid gap-4 md:grid-cols-2">
               {visibleProposals.map((proposal, index) => {
                 const map = {
-                  cumplida: { label: "REALIZADA", dot: "bg-[#92e2c6]", border: "border-[#92e2c6]/55", icon: Check },
-                  "en proceso": { label: "EN PREPARACIÓN", dot: "bg-[#f5a623]", border: "border-[#f5a623]/55", icon: Zap },
-                  próxima: { label: "A IMPULSAR", dot: "bg-[#78b9ff]", border: "border-[#78b9ff]/55", icon: ArrowRight },
+                  cumplida: { label: "REALIZADA", dot: "bg-[#78959A]", border: "border-[#78959A]/55", icon: Check },
+                  "en proceso": { label: "EN PREPARACIÓN", dot: "bg-[#D69A9A]", border: "border-[#D69A9A]/55", icon: Zap },
+                  próxima: { label: "A IMPULSAR", dot: "bg-[#FFF0C6]", border: "border-[#FFF0C6]/55", icon: ArrowRight },
                 }[proposal.state];
                 const Icon = map.icon;
-                return <article key={proposal.title} className={`interactive-lift poster-card relative overflow-hidden rounded-[1.45rem] border bg-card p-5 ${map.border} ${index % 2 ? "md:translate-y-7" : ""}`}>
+                return <article key={proposal.title} className={`interactive-lift poster-card relative overflow-hidden rounded-[1.45rem] border bg-[#FFF8EF] p-5 text-[#2B0710] ${map.border} ${index % 2 ? "md:translate-y-7" : ""}`}>
                   <div className="flex items-start justify-between gap-3">
-                    <span className="flex items-center gap-2 text-[0.63rem] font-black tracking-[0.12em] text-muted-foreground"><span className={`size-2.5 rounded-full ${map.dot}`} /> {map.label}</span>
-                    <span className="rounded-full bg-muted px-2 py-1 text-[0.62rem] font-extrabold text-muted-foreground">{proposal.area}</span>
+                    <span className="flex items-center gap-2 text-[0.6rem] font-black tracking-[0.1em] text-[#700A13]"><span className={`size-2.5 rounded-full ${map.dot}`} /> 44/ PROP 0{index + 1} · {map.label}</span>
+                    <span className="rounded-full bg-[#F4E0D5] px-2 py-1 text-[0.62rem] font-extrabold text-[#6D3940]">{proposal.area}</span>
                   </div>
                   <h3 className="mt-8 text-xl font-extrabold tracking-tight">{proposal.title}</h3>
-                  <p className="mt-2 text-sm font-medium leading-6 text-muted-foreground">{proposal.detail}</p>
-                  <div className="mt-6 flex items-center justify-between border-t border-border pt-3"><span className="text-xs font-bold text-muted-foreground">Propuesta de la Lista 044</span><Icon className="size-4 text-[#005A9C] dark:text-[#f5a623]" /></div>
+                  <p className="mt-2 text-sm font-medium leading-6 text-[#6D3940]">{proposal.detail}</p>
+                  <div className="mt-6 flex items-center justify-between border-t border-[#700A13]/12 pt-3"><span className="text-xs font-bold text-[#6D3940]">Propuesta de la Lista 044</span><Icon className="size-4 text-[#700A13]" /></div>
                 </article>;
               })}
             </div>
           </div>
         </section>
 
-        <section id="equipo" className="scroll-mt-20 bg-[#dcecf8] py-20 text-[#0d1117] sm:py-28">
+        <section id="equipo" className="scroll-mt-20 bg-[#F4E0D5] py-20 text-[#2B0710] sm:py-28">
           <div className="mx-auto grid max-w-6xl gap-9 px-4 sm:px-6 lg:grid-cols-[1.06fr_.94fr] lg:px-8">
-            <div className="relative min-h-[460px] overflow-hidden rounded-[2rem] bg-[#005A9C] p-5 shadow-[10px_11px_0_#0d1117]">
+            <div className="relative min-h-[460px] overflow-hidden rounded-[2rem] bg-[#700A13] p-5 shadow-[10px_11px_0_#2B0710]">
               <img src="/manus-storage/centro-equipo-stickers_df740828.jpg" alt="Collage de estudiantes que forman parte del Centro" className="absolute inset-0 size-full object-cover mix-blend-luminosity opacity-93" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#003e6b] via-transparent to-[#003e6b]/25" />
               <div className="relative z-10 flex h-full min-h-[420px] flex-col justify-between">
-                <div className="flex justify-between"><span className="sticker -rotate-3 rounded-lg bg-[#f5a623] px-3 py-2 text-xs font-black">NO HAY UNA SOLA VOZ</span><span className="rounded-full bg-white/90 px-3 py-2 text-xs font-black text-[#005A9C]">EL EQUIPO</span></div>
+                <div className="flex justify-between"><span className="sticker -rotate-3 rounded-lg bg-[#FFF0C6] px-3 py-2 text-xs font-black text-[#2B0710]">NO HAY UNA SOLA VOZ</span><span className="rounded-full bg-white/90 px-3 py-2 text-xs font-black text-[#700A13]">EL EQUIPO</span></div>
                 <div className="grid gap-2 sm:grid-cols-3">
-                  {committee.slice(0, 3).map((member) => <div key={member.role} className="rounded-2xl border border-white/25 bg-[#0d1117]/78 p-3 text-white backdrop-blur-sm"><p className="text-xs font-black text-[#f5a623]">{member.role}</p><p className="mt-1 text-xs font-semibold text-white/72">{member.name}</p></div>)}
+                  {committee.slice(0, 3).map((member) => <div key={member.role} className="rounded-2xl border border-white/25 bg-[#2B0710]/78 p-3 text-white backdrop-blur-sm"><p className="text-xs font-black text-[#FFF0C6]">{member.role}</p><p className="mt-1 text-xs font-semibold text-white/72">{member.name}</p></div>)}
                 </div>
               </div>
             </div>
             <div className="self-center">
-              <div className="section-label border-[#005A9C]/35 text-[#005A9C]"><UsersRound className="size-3" /> Lista 044</div>
-              <h2 className="display-face mt-4 text-4xl leading-[0.9] sm:text-5xl">UNA LISTA<br />CON <span className="text-[#005A9C]">NOMBRES.</span></h2>
-              <p className="mt-5 max-w-md text-sm font-semibold leading-6 text-[#0d1117]/70">Esta es la comisión del Centro de Estudiantes. Los canales, propuestas y agenda se van a sumar cuando estén listos.</p>
+              <div className="section-label border-[#700A13]/35 text-[#700A13]"><UsersRound className="size-3" /> Lista 044</div>
+              <h2 className="display-face mt-4 text-4xl leading-[0.9] sm:text-5xl">UNA LISTA<br />CON <span className="text-[#700A13]">NOMBRES.</span></h2>
+              <p className="mt-5 max-w-md text-sm font-semibold leading-6 text-[#2B0710]/70">Esta es la comisión del Centro de Estudiantes. Los canales, propuestas y agenda se van a sumar cuando estén listos.</p>
               <div className="mt-6 grid gap-2 sm:grid-cols-2">
-                {committee.map((member) => <article key={`${member.role}-${member.name}`} className="rounded-xl border border-[#0d1117]/12 bg-white/78 px-3 py-2.5"><p className="text-[.58rem] font-black tracking-[.08em] text-[#005A9C]">{member.role}</p><p className="mt-1 text-xs font-extrabold leading-4 text-[#0d1117]">{member.name}</p></article>)}
+                {committee.map((member) => <article key={`${member.role}-${member.name}`} className="rounded-xl border border-[#2B0710]/12 bg-white/78 px-3 py-2.5"><p className="text-[.58rem] font-black tracking-[.08em] text-[#700A13]">{member.role}</p><p className="mt-1 text-xs font-extrabold leading-4 text-[#2B0710]">{member.name}</p></article>)}
               </div>
-              <div className="mt-3 rounded-xl border border-[#0d1117]/12 bg-[#f5a623] px-4 py-3"><p className="text-[.58rem] font-black tracking-[.1em]">AVALES</p><p className="mt-1 text-xs font-extrabold">{endorsements.join(" · ")}</p></div>
+              <div className="mt-3 rounded-xl border border-[#2B0710]/12 bg-[#D69A9A] px-4 py-3"><p className="text-[.58rem] font-black tracking-[.1em]">AVALES</p><p className="mt-1 text-xs font-extrabold">{endorsements.join(" · ")}</p></div>
             </div>
           </div>
         </section>
 
-        <section id="agenda" className="scroll-mt-20 bg-[#0d1117] py-20 text-white sm:py-28">
+        <section id="agenda" className="scroll-mt-20 bg-[#2B0710] py-20 text-white sm:py-28">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
-              <div><div className="section-label"><CalendarDays className="size-3" /> Agenda y movidas</div><h2 className="display-face mt-4 text-4xl leading-[0.92] sm:text-5xl">EL RECREO<br />TAMBIÉN <span className="text-[#f5a623]">ORGANIZA.</span></h2></div>
-              <button onClick={() => toast.message("Calendario completo", { description: "Próximamente vas a poder sumarlo a tu calendario." })} className="flex w-fit items-center gap-2 text-sm font-extrabold text-white/70 transition hover:text-[#f5a623]">Ver todo el calendario <ExternalLink className="size-4" /></button>
+              <div><div className="section-label"><CalendarDays className="size-3" /> Agenda y movidas</div><h2 className="display-face mt-4 text-4xl leading-[0.92] sm:text-5xl">EL RECREO<br />TAMBIÉN <span className="text-[#FFF0C6]">ORGANIZA.</span></h2></div>
+              <button onClick={() => toast.message("Calendario completo", { description: "Próximamente vas a poder sumarlo a tu calendario." })} className="flex w-fit items-center gap-2 text-sm font-extrabold text-white/70 transition hover:text-[#FFF0C6]">Ver todo el calendario <ExternalLink className="size-4" /></button>
             </div>
             <div className="mt-10 grid gap-4 lg:grid-cols-3">
               {events.map((event, i) => {
-                const palette = event.tone === "blue" ? "bg-[#005A9C]" : event.tone === "gold" ? "bg-[#f5a623] text-[#0d1117]" : "bg-[#152942]";
+                const palette = event.tone === "blue" ? "bg-[#700A13]" : event.tone === "gold" ? "bg-[#FFF0C6] text-[#2B0710]" : "bg-[#4B121B]";
                 return <article key={event.title} className={`interactive-lift ${palette} relative min-h-[260px] overflow-hidden rounded-[1.75rem] p-6 shadow-[6px_6px_0_rgba(255,255,255,.18)]`}>
                   <span className="text-xs font-black tracking-[0.16em]">{event.date}</span>
                   <span className="absolute right-5 top-5 rounded-full border border-current/30 px-2.5 py-1 text-[0.6rem] font-black">{event.type}</span>
@@ -263,53 +266,53 @@ export default function Home() {
 
         <section className="bg-background py-20 sm:py-28">
           <div className="mx-auto grid max-w-6xl gap-6 px-4 sm:px-6 lg:grid-cols-[.86fr_1.14fr] lg:px-8">
-            <div className="rounded-[2rem] bg-[#f5a623] p-6 text-[#0d1117] shadow-[9px_9px_0_#005A9C] sm:p-8">
+            <div className="rounded-[2rem] bg-[#D69A9A] p-6 text-[#2B0710] shadow-[9px_9px_0_#700A13] sm:p-8">
               <div className="flex items-center justify-between"><GraduationCap className="size-8" /><span className="sticker rotate-3 rounded-full px-3 py-1.5 text-[.62rem] font-black">CONEXIÓN UNGS</span></div>
               <h2 className="display-face mt-14 text-4xl leading-[.9] sm:text-5xl">EL CAMPUS ES MÁS GRANDE QUE EL AULA.</h2>
-              <p className="mt-6 max-w-sm text-sm font-bold leading-6 text-[#0d1117]/72">Hay biblioteca, talleres, espacios para estudiar y lugares para merendar. Una guía corta para ubicarte y aprovecharlos.</p>
-              <Button onClick={() => toast.message("Guía ampliada", { description: "La versión completa estará disponible en los links clave." })} className="mt-8 rounded-xl bg-[#0d1117] px-5 py-6 text-sm font-extrabold text-white hover:bg-[#005A9C]">Ver guía rápida <ArrowRight className="ml-2 size-4" /></Button>
+              <p className="mt-6 max-w-sm text-sm font-bold leading-6 text-[#2B0710]/72">Hay biblioteca, talleres, espacios para estudiar y lugares para merendar. Una guía corta para ubicarte y aprovecharlos.</p>
+              <Button onClick={() => toast.message("Guía ampliada", { description: "La versión completa estará disponible en los links clave." })} className="mt-8 rounded-xl bg-[#700A13] px-5 py-6 text-sm font-extrabold text-white hover:bg-[#941C25]">Ver guía rápida <ArrowRight className="ml-2 size-4" /></Button>
             </div>
-            <div className="relative min-h-[380px] overflow-hidden rounded-[2rem] bg-[#dcecf8] shadow-[9px_9px_0_rgba(0,90,156,.18)]">
+            <div className="relative min-h-[380px] overflow-hidden rounded-[2rem] bg-[#F4E0D5] shadow-[9px_9px_0_rgba(112,10,19,.18)]">
               <img src="/manus-storage/centro-campus-guia_3fde1d46.jpg" alt="Estudiante explorando espacios del campus" className="absolute inset-0 size-full object-cover" />
               <div className="absolute inset-x-4 bottom-4 grid grid-cols-3 gap-2 sm:inset-x-6 sm:bottom-6">
-                {[{ icon: Library, label: "Biblioteca" }, { icon: BookOpen, label: "Talleres" }, { icon: CircleHelp, label: "Orientación" }].map(({ icon: Icon, label }) => <div key={label} className="rounded-2xl bg-[#0d1117]/88 p-3 text-center text-white backdrop-blur-sm"><Icon className="mx-auto size-4 text-[#f5a623]" /><p className="mt-1 text-[.62rem] font-extrabold">{label}</p></div>)}
+                {[{ icon: Library, label: "Biblioteca" }, { icon: BookOpen, label: "Talleres" }, { icon: CircleHelp, label: "Orientación" }].map(({ icon: Icon, label }) => <div key={label} className="rounded-2xl bg-[#2B0710]/88 p-3 text-center text-white backdrop-blur-sm"><Icon className="mx-auto size-4 text-[#FFF0C6]" /><p className="mt-1 text-[.62rem] font-extrabold">{label}</p></div>)}
               </div>
             </div>
           </div>
         </section>
 
-        <section id="herramientas" className="scroll-mt-20 bg-[#edf6fb] py-20 text-[#0d1117] sm:py-28">
+        <section id="herramientas" className="scroll-mt-20 bg-[#F4E0D5] py-20 text-[#2B0710] sm:py-28">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="max-w-2xl"><div className="section-label border-[#005A9C]/35 text-[#005A9C]"><Sparkles className="size-3" /> Caja de herramientas</div><h2 className="display-face mt-4 text-4xl leading-[.9] sm:text-5xl">LO QUE NECESITÁS, SIN DAR MIL VUELTAS.</h2></div>
+            <div className="max-w-2xl"><div className="section-label border-[#700A13]/35 text-[#700A13]"><Sparkles className="size-3" /> Caja de herramientas</div><h2 className="display-face mt-4 text-4xl leading-[.9] sm:text-5xl">LO QUE NECESITÁS, SIN DAR MIL VUELTAS.</h2></div>
             <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {resources.map(({ title, icon: Icon, note, color }, index) => <button key={title} onClick={() => toast.message(`${title}: próximamente`, { description: "Este acceso se conectará cuando estén listos los enlaces oficiales." })} className={`interactive-lift group relative min-h-[184px] rounded-[1.55rem] p-5 text-left shadow-[5px_5px_0_#0d1117] ${color} ${index === 1 ? "sm:-translate-y-5" : index === 3 ? "sm:translate-y-5" : ""}`}><span className="absolute right-4 top-4 text-[.58rem] font-black tracking-[.15em] opacity-55">CE/ 0{index + 1}</span><div className="flex items-start justify-between"><Icon className="size-7" /><ArrowUpRightIcon /></div><p className="mt-12 text-lg font-extrabold leading-5">{title}</p><p className="mt-1 text-xs font-bold opacity-70">{note}</p></button>)}
+              {resources.map(({ title, icon: Icon, note, color }, index) => <button key={title} onClick={() => toast.message(`${title}: próximamente`, { description: "Este acceso se conectará cuando estén listos los enlaces oficiales." })} className={`interactive-lift group relative min-h-[184px] rounded-[1.55rem] p-5 text-left shadow-[5px_5px_0_#2B0710] ${color} ${index === 1 ? "sm:-translate-y-5" : index === 3 ? "sm:translate-y-5" : ""}`}><span className="absolute right-4 top-4 text-[.58rem] font-black tracking-[.15em] opacity-55">44/ 0{index + 1}</span><div className="flex items-start justify-between"><Icon className="size-7" /><ArrowUpRightIcon /></div><p className="mt-12 text-lg font-extrabold leading-5">{title}</p><p className="mt-1 text-xs font-bold opacity-70">{note}</p></button>)}
             </div>
           </div>
         </section>
 
         <section id="participa" className="scroll-mt-20 bg-background py-20 sm:py-28">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="poster-card relative overflow-hidden rounded-[1.8rem] bg-[#0d1117] p-7 text-white sm:p-10">
-              <div className="absolute right-5 top-5 grid size-16 place-items-center rounded-2xl bg-[#f5a623] shadow-[4px_4px_0_#005A9C]"><img src="/manus-storage/centro-ce-symbol_eb5181bc.png" alt="Sello temporal de la Lista 044" className="size-10" /></div>
-              <div className="section-label">Espacio en preparación</div>
+            <div className="poster-card relative overflow-hidden rounded-[1.8rem] bg-[#2B0710] p-7 text-white sm:p-10">
+              <div className="absolute right-5 top-5 grid size-16 place-items-center overflow-hidden rounded-2xl bg-[#700A13] shadow-[4px_4px_0_#D69A9A]"><img src="/manus-storage/logo-lista-44_825fbf95.png" alt="Logo oficial de la Lista 44" className="size-full object-cover" /></div>
+              <div className="section-label">Participación · Próximamente</div>
               <h2 className="display-face mt-5 max-w-2xl text-4xl leading-[.9] sm:text-5xl">ESTAMOS ORDENANDO LOS CANALES PARA PARTICIPAR.</h2>
-              <p className="mt-6 max-w-xl text-sm font-semibold leading-6 text-white/70">Cuando haya una forma oficial de enviar ideas, votar o pedir ayuda, se va a habilitar acá. Por ahora, este sitio muestra solamente la información confirmada de la Lista 044.</p>
+              <p className="mt-6 max-w-xl text-sm font-semibold leading-6 text-white/70">Tu idea, tu consulta y tu ayuda van a tener lugar acá. Cuando el canal oficial esté listo, se habilitará en esta sección; por ahora mostramos solamente información confirmada de la Lista 044.</p>
             </div>
           </div>
         </section>
 
-        <section className="border-t border-white/10 bg-[#0d1117] py-16 text-white sm:py-20">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8"><div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><span className="text-[.65rem] font-black tracking-[.14em] text-[#f5a623]">CANALES OFICIALES</span><h2 className="display-face mt-3 text-3xl leading-[.92] sm:text-4xl">CUANDO ESTÉ, LO VAS A VER ACÁ.</h2></div><Instagram className="size-7 text-[#f5a623]" /></div>
+        <section className="border-t border-white/10 bg-[#2B0710] py-16 text-white sm:py-20">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8"><div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><span className="text-[.65rem] font-black tracking-[.14em] text-[#FFF0C6]">CANALES OFICIALES</span><h2 className="display-face mt-3 text-3xl leading-[.92] sm:text-4xl">CUANDO ESTÉ, LO VAS A VER ACÁ.</h2></div><Instagram className="size-7 text-[#FFF0C6]" /></div>
             <div className="mt-8 grid gap-3 sm:grid-cols-[1.25fr_.75fr]">
-              <div className="rounded-[1.5rem] border border-white/10 bg-[#152942] p-6"><p className="text-[.62rem] font-black tracking-[.16em] text-[#f5a623]">REDES Y NOVEDADES</p><p className="mt-4 max-w-lg text-lg font-extrabold leading-6">Todavía no hay un enlace oficial publicado. Cuando esté disponible, este bloque se conecta al canal real de la Lista 044.</p></div>
-              <div className="rounded-[1.5rem] border border-white/10 bg-[#005A9C] p-6"><img src="/manus-storage/centro-ce-symbol_eb5181bc.png" alt="Sello temporal de la Lista 044" className="size-10" /><p className="mt-10 text-sm font-extrabold">Sitio en construcción, con información confirmada.</p></div>
+              <div className="rounded-[1.5rem] border border-white/10 bg-[#4B121B] p-6"><p className="text-[.62rem] font-black tracking-[.16em] text-[#FFF0C6]">REDES Y NOVEDADES</p><p className="mt-4 max-w-lg text-lg font-extrabold leading-6">Todavía no hay un enlace oficial publicado. Cuando esté disponible, este bloque se conecta al canal real de la Lista 044.</p></div>
+              <div className="rounded-[1.5rem] border border-white/10 bg-[#700A13] p-6"><img src="/manus-storage/logo-lista-44_825fbf95.png" alt="Logo oficial de la Lista 44" className="size-10 rounded-full object-cover" /><p className="mt-10 text-sm font-extrabold">Sitio en construcción, con información confirmada.</p></div>
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="bg-[#080c12] py-7 text-white/55">
-        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 text-xs font-semibold sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8"><div className="flex items-center gap-2"><span className="grid size-8 place-items-center rounded-lg bg-[#f5a623]"><img src="/manus-storage/centro-ce-symbol_eb5181bc.png" alt="Sello CE" className="size-5" /></span><span><strong className="text-[#f5a623]">CE/</strong> Centro de Estudiantes · Secundaria UNGS</span></div><p>Hecho para participar, proponer y mover la escuela.</p></div>
+      <footer className="bg-[#180309] py-7 text-white/55">
+        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 text-xs font-semibold sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8"><div className="flex items-center gap-2"><span className="grid size-9 place-items-center overflow-hidden rounded-lg bg-[#700A13]"><img src="/manus-storage/logo-lista-44_825fbf95.png" alt="Logo oficial de la Lista 44" className="size-full object-cover" /></span><span><strong className="block text-[#FFF0C6]">CENTRO DE ESTUDIANTES</strong><span className="mt-0.5 block text-white/55">SECUNDARIA UNGS · LISTA 44</span></span></div><p>Hecho por estudiantes · Para estudiantes.</p></div>
       </footer>
     </div>
   );
