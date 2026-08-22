@@ -12,3 +12,4 @@
 - [x] Reemplazar la paleta azul/dorada por el sistema visual bordó de la Lista 44.
 - [x] Actualizar el nombre institucional y el lema de autoría estudiantil.
 - [x] Verificar la versión bordó en escritorio y celular.
+- [x] Corregir el contraste del texto “TODXS.” en el hero.

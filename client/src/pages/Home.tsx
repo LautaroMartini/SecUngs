@@ -145,7 +145,7 @@ export default function Home() {
                 <span className="leading-none"><span className="block text-[.58rem] font-black tracking-[.18em] text-[#FFF0C6]">LISTA 44 · CDF</span><strong className="mt-1 block text-xs font-extrabold text-white">Centro de Estudiantes</strong><span className="mt-0.5 block text-[.58rem] font-bold tracking-[.1em] text-white/70">SECUNDARIA UNGS</span></span>
               </div>
               <h1 className="entry entry-delay-1 display-face mt-5 max-w-xl text-[clamp(3.1rem,9vw,7.3rem)] leading-[0.82] text-white">
-                EL CENTRO<br />LO HACEMOS<br /><span className="marker-underline text-[#2B0710]">TODXS.</span>
+                EL CENTRO<br />LO HACEMOS<br /><span className="marker-underline text-[#FFF0C6] [text-shadow:0_3px_0_#700A13]">TODXS.</span>
               </h1>
               <p className="entry entry-delay-2 mt-7 max-w-md text-base font-medium leading-7 text-white/76 sm:text-lg">Ideas que llegan, planes que se mueven y una secundaria que se organiza entre todos.</p>
               <div className="entry entry-delay-3 mt-8 flex flex-wrap gap-3">
