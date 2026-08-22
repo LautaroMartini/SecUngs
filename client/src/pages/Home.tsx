@@ -91,10 +91,10 @@ export default function Home() {
 
   const visibleProposals = proposals.filter((proposal) => proposalFilter === "todas" || proposal.state === proposalFilter);
   const navLinks = [
-    ["La posta", "propuestas"],
-    ["El equipo", "equipo"],
-    ["Movidas", "agenda"],
-    ["Links clave", "herramientas"],
+    ["Propuestas", "propuestas"],
+    ["Comisión", "equipo"],
+    ["Novedades", "agenda"],
+    ["Recursos", "herramientas"],
   ] as const;
 
   return (
@@ -169,15 +169,6 @@ export default function Home() {
               </div>
               <div className="absolute -bottom-2 -left-2 flex size-20 rotate-12 items-center justify-center overflow-hidden rounded-2xl border-2 border-[#FFF0C6] bg-[#700A13] text-[#2B0710] shadow-[4px_4px_0_#D69A9A] sm:-left-7 sm:size-24"><img src="/manus-storage/logo-lista-44_825fbf95.png" alt="Logo de la Lista 44" className="size-full object-cover" /></div>
             </div>
-          </div>
-        </section>
-
-        <section aria-label="Mini cartelera" className="relative z-10 -mt-1 border-y border-[#2B0710]/10 bg-[#D69A9A] text-[#2B0710] dark:border-white/10">
-          <div className="mx-auto flex max-w-6xl items-center gap-5 overflow-x-auto px-4 py-3.5 sm:px-6 lg:px-8">
-            <span className="shrink-0 text-xs font-black tracking-[0.16em]">LA POSTA DEL DÍA</span>
-            <span className="h-5 w-px shrink-0 bg-[#2B0710]/30" />
-            <p className="shrink-0 text-sm font-bold">Este espacio se está organizando con la comisión de la Lista 044.</p>
-            <button onClick={() => jumpTo("equipo")} className="ml-auto flex shrink-0 items-center gap-1 rounded-full bg-[#700A13] px-3 py-1.5 text-xs font-extrabold text-white transition hover:translate-x-0.5">Ver comisión <ArrowRight className="size-3.5" /></button>
           </div>
         </section>
 
