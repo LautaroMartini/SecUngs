@@ -7,3 +7,4 @@
 - [ ] Verificar la experiencia responsive y guardar un checkpoint.
 - [x] Redactar e incorporar las propuestas reales de la Lista 044.
 - [x] Validar la presentación de propuestas en escritorio y celular.
+- [x] Incorporar la propuesta de torneo de fútbol entre cursos.
