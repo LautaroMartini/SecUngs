@@ -31,36 +31,44 @@ import {
   X,
   Zap,
 } from "lucide-react";
-import { FormEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
 type ProposalState = "cumplida" | "en proceso" | "próxima";
 
 const proposals: { title: string; detail: string; state: ProposalState; area: string }[] = [
-  { title: "Horarios de consulta", detail: "Tablero semanal por materia y curso.", state: "cumplida", area: "Académico" },
-  { title: "Torneo intercurso", detail: "Inscripción, reglas y fixture colaborativo.", state: "en proceso", area: "Deportes" },
-  { title: "Peña de primavera", detail: "Artistas, bandas y producción hecha en equipo.", state: "próxima", area: "Cultura" },
-  { title: "Banco de apuntes", detail: "Un punto único para compartir y pedir material.", state: "en proceso", area: "Académico" },
+  { title: "Plan de trabajo", detail: "La comisión está ordenando las primeras propuestas para compartirlas por este canal.", state: "en proceso", area: "Lista 044" },
+  { title: "Canales de consulta", detail: "Próximamente se informarán las formas oficiales para acercar ideas y preguntas.", state: "próxima", area: "Participación" },
+  { title: "Agenda estudiantil", detail: "Las actividades y comunicados se publicarán cuando estén confirmados.", state: "próxima", area: "Comunidad" },
+  { title: "Recursos útiles", detail: "El equipo está reuniendo los enlaces que realmente sirvan para la escuela.", state: "en proceso", area: "Información" },
 ];
 
 const events = [
-  { date: "28 AGO", type: "ASAMBLEA", title: "Traé una idea, salí con un plan", tone: "blue" },
-  { date: "04 SEP", type: "DEPORTE", title: "Arranca el torneo: equipos mixtos", tone: "night" },
-  { date: "12 SEP", type: "CULTURA", title: "Laboratorio de peña + playlist abierta", tone: "gold" },
+  { date: "PRONTO", type: "COMUNICADOS", title: "Las novedades de la Lista 044 aparecen acá", tone: "blue" },
+  { date: "PRONTO", type: "ACTIVIDADES", title: "Cuando haya una fecha confirmada, la vas a encontrar acá", tone: "night" },
+  { date: "PRONTO", type: "PARTICIPACIÓN", title: "Estamos ordenando el espacio para escuchar a todos", tone: "gold" },
 ];
 
 const resources = [
-  { title: "Banco de apuntes", icon: NotebookTabs, note: "Compartir suma", color: "bg-[#005A9C] text-white" },
-  { title: "Horarios", icon: CalendarDays, note: "Tu semana clara", color: "bg-[#f5a623] text-[#0d1117]" },
-  { title: "Calendario", icon: ClipboardPenLine, note: "Fechas que importan", color: "bg-[#10213a] text-white" },
-  { title: "Modelos de pruebas", icon: FileText, note: "Para practicar", color: "bg-[#dcecf8] text-[#0d1117]" },
+  { title: "Apuntes", icon: NotebookTabs, note: "En preparación", color: "bg-[#005A9C] text-white" },
+  { title: "Horarios", icon: CalendarDays, note: "En preparación", color: "bg-[#f5a623] text-[#0d1117]" },
+  { title: "Calendario", icon: ClipboardPenLine, note: "En preparación", color: "bg-[#10213a] text-white" },
+  { title: "Material de estudio", icon: FileText, note: "En preparación", color: "bg-[#dcecf8] text-[#0d1117]" },
 ];
 
-const crew = [
-  { role: "Presidencia", year: "5° año", position: "top-6 left-5" },
-  { role: "Cultura", year: "4° año", position: "top-11 right-4" },
-  { role: "Deportes", year: "4° año", position: "bottom-5 left-11" },
+const committee = [
+  { role: "Presidente", name: "Demian Elias Alvarez" },
+  { role: "Vicepresidente", name: "Renzo Daniel Cañete" },
+  { role: "Secretaria", name: "Mía Aylen Tea" },
+  { role: "Tesorera", name: "Sofia Rusinoff" },
+  { role: "Sub-Tesorera", name: "Lourdes Muñoz" },
+  { role: "Vocal TEC", name: "Gonzalo Devita" },
+  { role: "Vocal COMU", name: "Alma Quimey Alegre" },
+  { role: "Vocal LENEX", name: "Brenda Teves" },
+  { role: "Vocal de intereses", name: "Tomás López Báez" },
 ];
+
+const endorsements = ["Felipe González", "Gustavo Castro"];
 
 function jumpTo(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -70,8 +78,6 @@ export default function Home() {
   const { theme, toggleTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [proposalFilter, setProposalFilter] = useState<ProposalState | "todas">("todas");
-  const [vote, setVote] = useState("" as "Bandas locales" | "DJ recreo" | "Taller de mural" | "");
-  const [voted, setVoted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -87,21 +93,6 @@ export default function Home() {
     ["Movidas", "agenda"],
     ["Links clave", "herramientas"],
   ] as const;
-
-  const submitIdea = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    toast.success("Tu mensaje quedó registrado", { description: "El buzón está listo para recibir la próxima idea." });
-    event.currentTarget.reset();
-  };
-
-  const submitVote = () => {
-    if (!vote) {
-      toast.message("Elegí una opción antes de votar");
-      return;
-    }
-    setVoted(true);
-    toast.success("Voto anotado", { description: "Gracias por sumar tu voz a la próxima peña." });
-  };
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
@@ -125,8 +116,8 @@ export default function Home() {
             <button onClick={toggleTheme} className="grid size-9 place-items-center rounded-xl border border-white/15 text-white/80 transition hover:bg-white/10 light:border-[#0d1117]/10 light:text-[#0d1117] light:hover:bg-[#005A9C]/10" aria-label="Cambiar modo de color">
               {theme === "dark" ? <Sun className="size-4" /> : <Moon className="size-4" />}
             </button>
-            <Button onClick={() => jumpTo("participa")} className="hidden rounded-xl bg-[#f5a623] px-4 text-xs font-extrabold text-[#0d1117] shadow-[3px_3px_0_#005A9C] hover:bg-[#ffd26f] sm:inline-flex">
-              Dejá tu idea <Sparkles className="ml-1.5 size-3.5" />
+            <Button onClick={() => jumpTo("equipo")} className="hidden rounded-xl bg-[#f5a623] px-4 text-xs font-extrabold text-[#0d1117] shadow-[3px_3px_0_#005A9C] hover:bg-[#ffd26f] sm:inline-flex">
+              Lista 044 <ArrowDownRight className="ml-1.5 size-3.5" />
             </Button>
             <button onClick={() => setMobileMenuOpen((open) => !open)} className="grid size-9 place-items-center rounded-xl border border-white/15 text-white lg:hidden light:border-[#0d1117]/10 light:text-[#0d1117]" aria-label="Abrir menú" aria-expanded={mobileMenuOpen}>
               {mobileMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
@@ -136,7 +127,7 @@ export default function Home() {
         {mobileMenuOpen && (
           <div className="mx-auto mt-2 max-w-6xl rounded-[1.35rem] border border-white/10 bg-[#101827]/95 p-3 shadow-2xl backdrop-blur-xl lg:hidden">
             {navLinks.map(([label, id]) => <button key={id} onClick={() => { jumpTo(id); setMobileMenuOpen(false); }} className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-sm font-extrabold text-white hover:bg-white/10"><span>{label}</span><ChevronRight className="size-4 text-[#f5a623]" /></button>)}
-            <Button onClick={() => { jumpTo("participa"); setMobileMenuOpen(false); }} className="mt-2 w-full rounded-xl bg-[#f5a623] font-extrabold text-[#0d1117]">Dejá tu idea</Button>
+            <Button onClick={() => { jumpTo("equipo"); setMobileMenuOpen(false); }} className="mt-2 w-full rounded-xl bg-[#f5a623] font-extrabold text-[#0d1117]">Conocé la Lista 044</Button>
           </div>
         )}
       </header>
@@ -152,8 +143,8 @@ export default function Home() {
               </h1>
               <p className="entry entry-delay-2 mt-7 max-w-md text-base font-medium leading-7 text-white/76 sm:text-lg">Ideas que llegan, planes que se mueven y una secundaria que se organiza entre todos.</p>
               <div className="entry entry-delay-3 mt-8 flex flex-wrap gap-3">
-                <Button onClick={() => jumpTo("participa")} className="rounded-xl bg-[#f5a623] px-5 py-6 text-sm font-extrabold text-[#0d1117] shadow-[4px_4px_0_#005A9C] hover:bg-[#ffd26f]">Dejá tu idea <Sparkles className="ml-2 size-4" /></Button>
-                <Button onClick={() => jumpTo("participa")} variant="outline" className="rounded-xl border-white/25 bg-white/5 px-5 py-6 text-sm font-extrabold text-white hover:bg-white/12 hover:text-white">Votá por la peña <Trophy className="ml-2 size-4" /></Button>
+                <Button onClick={() => jumpTo("equipo")} className="rounded-xl bg-[#f5a623] px-5 py-6 text-sm font-extrabold text-[#0d1117] shadow-[4px_4px_0_#005A9C] hover:bg-[#ffd26f]">Conocé la Lista 044 <ArrowDownRight className="ml-2 size-4" /></Button>
+                <Button onClick={() => jumpTo("propuestas")} variant="outline" className="rounded-xl border-white/25 bg-white/5 px-5 py-6 text-sm font-extrabold text-white hover:bg-white/12 hover:text-white">Lo que estamos armando <ArrowRight className="ml-2 size-4" /></Button>
               </div>
               <div className="mt-9 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-bold text-white/55">
                 <span className="flex items-center gap-1.5"><span className="size-2 rounded-full bg-[#92e2c6]" /> Hecho entre estudiantes</span>
@@ -179,8 +170,8 @@ export default function Home() {
           <div className="mx-auto flex max-w-6xl items-center gap-5 overflow-x-auto px-4 py-3.5 sm:px-6 lg:px-8">
             <span className="shrink-0 text-xs font-black tracking-[0.16em]">LA POSTA DEL DÍA</span>
             <span className="h-5 w-px shrink-0 bg-[#0d1117]/30" />
-            <p className="shrink-0 text-sm font-bold">El 28 de agosto hay asamblea: vení con una pregunta, una crítica o una idea.</p>
-            <button onClick={() => jumpTo("agenda")} className="ml-auto flex shrink-0 items-center gap-1 rounded-full bg-[#0d1117] px-3 py-1.5 text-xs font-extrabold text-white transition hover:translate-x-0.5">Ver agenda <ArrowRight className="size-3.5" /></button>
+            <p className="shrink-0 text-sm font-bold">Este espacio se está organizando con la comisión de la Lista 044.</p>
+            <button onClick={() => jumpTo("equipo")} className="ml-auto flex shrink-0 items-center gap-1 rounded-full bg-[#0d1117] px-3 py-1.5 text-xs font-extrabold text-white transition hover:translate-x-0.5">Ver comisión <ArrowRight className="size-3.5" /></button>
           </div>
         </section>
 
@@ -230,19 +221,18 @@ export default function Home() {
               <div className="relative z-10 flex h-full min-h-[420px] flex-col justify-between">
                 <div className="flex justify-between"><span className="sticker -rotate-3 rounded-lg bg-[#f5a623] px-3 py-2 text-xs font-black">NO HAY UNA SOLA VOZ</span><span className="rounded-full bg-white/90 px-3 py-2 text-xs font-black text-[#005A9C]">EL EQUIPO</span></div>
                 <div className="grid gap-2 sm:grid-cols-3">
-                  {crew.map((member) => <div key={member.role} className="rounded-2xl border border-white/25 bg-[#0d1117]/78 p-3 text-white backdrop-blur-sm"><p className="text-xs font-black text-[#f5a623]">{member.role}</p><p className="mt-1 text-xs font-semibold text-white/72">{member.year}</p></div>)}
+                  {committee.slice(0, 3).map((member) => <div key={member.role} className="rounded-2xl border border-white/25 bg-[#0d1117]/78 p-3 text-white backdrop-blur-sm"><p className="text-xs font-black text-[#f5a623]">{member.role}</p><p className="mt-1 text-xs font-semibold text-white/72">{member.name}</p></div>)}
                 </div>
               </div>
             </div>
             <div className="self-center">
-              <div className="section-label border-[#005A9C]/35 text-[#005A9C]"><UsersRound className="size-3" /> El equipo</div>
-              <h2 className="display-face mt-4 text-4xl leading-[0.9] sm:text-5xl">UNA MESA<br />CON MÁS <span className="text-[#005A9C]">SILLAS.</span></h2>
-              <p className="mt-6 max-w-md text-base font-semibold leading-7 text-[#0d1117]/70">El Centro se organiza por comisiones, años y propuestas. Si tenés ganas de sumarte, no hace falta venir con todo resuelto.</p>
-              <div className="mt-7 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-2xl border border-[#0d1117]/12 bg-white/78 p-4"><UsersRound className="size-5 text-[#005A9C]" /><p className="mt-5 text-sm font-extrabold">Comisiones abiertas</p><p className="mt-1 text-xs font-semibold leading-5 text-[#0d1117]/60">Cultura, deporte, convivencia y acompañamiento.</p></div>
-                <div className="rounded-2xl border border-[#0d1117]/12 bg-[#f5a623] p-4"><MessageCircleMore className="size-5" /><p className="mt-5 text-sm font-extrabold">Hablanos directo</p><p className="mt-1 text-xs font-semibold leading-5 text-[#0d1117]/65">Dejá tu interés y te contamos cuándo nos juntamos.</p></div>
+              <div className="section-label border-[#005A9C]/35 text-[#005A9C]"><UsersRound className="size-3" /> Lista 044</div>
+              <h2 className="display-face mt-4 text-4xl leading-[0.9] sm:text-5xl">UNA LISTA<br />CON <span className="text-[#005A9C]">NOMBRES.</span></h2>
+              <p className="mt-5 max-w-md text-sm font-semibold leading-6 text-[#0d1117]/70">Esta es la comisión del Centro de Estudiantes. Los canales, propuestas y agenda se van a sumar cuando estén listos.</p>
+              <div className="mt-6 grid gap-2 sm:grid-cols-2">
+                {committee.map((member) => <article key={`${member.role}-${member.name}`} className="rounded-xl border border-[#0d1117]/12 bg-white/78 px-3 py-2.5"><p className="text-[.58rem] font-black tracking-[.08em] text-[#005A9C]">{member.role}</p><p className="mt-1 text-xs font-extrabold leading-4 text-[#0d1117]">{member.name}</p></article>)}
               </div>
-              <Button onClick={() => jumpTo("participa")} className="mt-6 rounded-xl bg-[#0d1117] px-5 py-6 text-sm font-extrabold text-white hover:bg-[#005A9C]">Quiero sumarme <ArrowRight className="ml-2 size-4" /></Button>
+              <div className="mt-3 rounded-xl border border-[#0d1117]/12 bg-[#f5a623] px-4 py-3"><p className="text-[.58rem] font-black tracking-[.1em]">AVALES</p><p className="mt-1 text-xs font-extrabold">{endorsements.join(" · ")}</p></div>
             </div>
           </div>
         </section>
@@ -296,31 +286,20 @@ export default function Home() {
 
         <section id="participa" className="scroll-mt-20 bg-background py-20 sm:py-28">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><div className="section-label"><MessageCircleMore className="size-3" /> Zona de participación</div><h2 className="display-face mt-4 text-4xl leading-[.9] sm:text-5xl">TU IDEA NO QUEDA<br />EN <span className="text-[#005A9C] dark:text-[#78b9ff]">VISTO.</span></h2></div><p className="max-w-sm text-sm font-semibold leading-6 text-muted-foreground">Elegí, sugerí o descargá una inquietud. Todas las entradas ayudan a decidir por dónde seguir.</p></div>
-            <div className="mt-9 grid gap-5 lg:grid-cols-[.9fr_1.1fr]">
-              <div className="poster-card overflow-hidden rounded-[1.75rem] bg-[#0d1117] p-6 text-white">
-              <div className="flex items-start justify-between"><span className="sticker -rotate-2 rounded-full bg-[#f5a623] px-3 py-1.5 text-[.62rem] font-black text-[#0d1117]">CE/ ENCUESTA EXPRESS</span><Trophy className="size-5 text-[#f5a623]" /></div>
-                <h3 className="display-face mt-9 text-3xl leading-[.95]">¿QUÉ TE COPA PARA LA PEÑA?</h3>
-                <div className="mt-6 space-y-2">
-                  {(["Bandas locales", "DJ recreo", "Taller de mural"] as const).map((choice) => <button key={choice} onClick={() => !voted && setVote(choice)} disabled={voted} className={`flex w-full items-center justify-between rounded-xl border px-4 py-3 text-left text-sm font-extrabold transition ${vote === choice ? "border-[#f5a623] bg-[#f5a623] text-[#0d1117]" : "border-white/15 bg-white/5 text-white hover:border-white/50"}`}><span>{choice}</span><span className={`grid size-5 place-items-center rounded-full border ${vote === choice ? "border-[#0d1117]" : "border-white/30"}`}>{vote === choice && <Check className="size-3.5" />}</span></button>)}
-                </div>
-                <Button onClick={submitVote} disabled={voted} className="mt-5 w-full rounded-xl bg-[#005A9C] py-6 font-extrabold text-white hover:bg-[#1678bd] disabled:bg-[#92e2c6] disabled:text-[#0d1117]">{voted ? "Voto anotado" : "Votar"}</Button>
-              </div>
-              <form onSubmit={submitIdea} className="rounded-[1.75rem] border border-border bg-card p-6 shadow-[7px_7px_0_rgba(0,90,156,.15)] sm:p-7">
-                <div className="flex items-center justify-between"><div><span className="text-[.64rem] font-black tracking-[.12em] text-[#005A9C] dark:text-[#f5a623]">BUZÓN ANÓNIMO</span><h3 className="mt-2 text-2xl font-extrabold tracking-tight">¿Qué te gustaría cambiar?</h3></div><Send className="size-6 text-[#005A9C] dark:text-[#f5a623]" /></div>
-                <p className="mt-2 text-sm font-medium leading-6 text-muted-foreground">No hace falta dejar nombre. Contanos qué pasa, dónde y qué imaginás para mejorarlo.</p>
-                <label className="mt-6 block text-xs font-extrabold" htmlFor="idea">Tu mensaje</label>
-                <textarea id="idea" required minLength={8} placeholder="Ej.: estaría bueno tener..." className="mt-2 min-h-32 w-full resize-none rounded-xl border border-border bg-muted/40 p-4 text-sm font-medium outline-none transition placeholder:text-muted-foreground/70 focus:border-[#005A9C] focus:ring-2 focus:ring-[#005A9C]/15 dark:focus:border-[#f5a623] dark:focus:ring-[#f5a623]/15" />
-                <Button type="submit" className="mt-4 rounded-xl bg-[#f5a623] px-5 py-6 font-extrabold text-[#0d1117] shadow-[3px_3px_0_#005A9C] hover:bg-[#ffd26f]">Mandar al buzón <Send className="ml-2 size-4" /></Button>
-              </form>
+            <div className="poster-card relative overflow-hidden rounded-[1.8rem] bg-[#0d1117] p-7 text-white sm:p-10">
+              <div className="absolute right-5 top-5 grid size-16 place-items-center rounded-2xl bg-[#f5a623] shadow-[4px_4px_0_#005A9C]"><img src="/manus-storage/centro-ce-symbol_eb5181bc.png" alt="Sello temporal de la Lista 044" className="size-10" /></div>
+              <div className="section-label">Espacio en preparación</div>
+              <h2 className="display-face mt-5 max-w-2xl text-4xl leading-[.9] sm:text-5xl">ESTAMOS ORDENANDO LOS CANALES PARA PARTICIPAR.</h2>
+              <p className="mt-6 max-w-xl text-sm font-semibold leading-6 text-white/70">Cuando haya una forma oficial de enviar ideas, votar o pedir ayuda, se va a habilitar acá. Por ahora, este sitio muestra solamente la información confirmada de la Lista 044.</p>
             </div>
           </div>
         </section>
 
         <section className="border-t border-white/10 bg-[#0d1117] py-16 text-white sm:py-20">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8"><div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><span className="text-[.65rem] font-black tracking-[.14em] text-[#f5a623]">DE LA ESCUELA AL FEED</span><h2 className="display-face mt-3 text-3xl leading-[.92] sm:text-4xl">LO QUE SE MUEVE, SE COMPARTE.</h2></div><button onClick={() => toast.message("Instagram del Centro", { description: "Sumá el enlace oficial cuando esté disponible." })} className="flex w-fit items-center gap-2 text-sm font-extrabold text-white/72 transition hover:text-[#f5a623]"><Instagram className="size-4" /> Seguir en Instagram</button></div>
-            <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-              {["Asamblea", "Torneo", "Apuntes", "Peña"].map((label, index) => <button key={label} onClick={() => toast.message(`${label}: próxima publicación`)} className={`interactive-lift relative aspect-square overflow-hidden rounded-2xl border border-white/10 p-4 text-left ${["bg-[#005A9C]", "bg-[#152942]", "bg-[#005A9C]", "bg-[#f5a623] text-[#0d1117]"][index]} ${index === 1 ? "sm:translate-y-5" : index === 2 ? "sm:-translate-y-4" : ""}`}><span className="absolute right-3 top-3 text-[.58rem] font-black tracking-[.12em] opacity-70">CE/ POST 0{index + 1}</span><span className="display-face absolute bottom-4 left-4 max-w-[8rem] text-2xl leading-[.88]">{label}</span><Instagram className="absolute bottom-4 right-4 size-4 opacity-55" /></button>)}
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8"><div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><span className="text-[.65rem] font-black tracking-[.14em] text-[#f5a623]">CANALES OFICIALES</span><h2 className="display-face mt-3 text-3xl leading-[.92] sm:text-4xl">CUANDO ESTÉ, LO VAS A VER ACÁ.</h2></div><Instagram className="size-7 text-[#f5a623]" /></div>
+            <div className="mt-8 grid gap-3 sm:grid-cols-[1.25fr_.75fr]">
+              <div className="rounded-[1.5rem] border border-white/10 bg-[#152942] p-6"><p className="text-[.62rem] font-black tracking-[.16em] text-[#f5a623]">REDES Y NOVEDADES</p><p className="mt-4 max-w-lg text-lg font-extrabold leading-6">Todavía no hay un enlace oficial publicado. Cuando esté disponible, este bloque se conecta al canal real de la Lista 044.</p></div>
+              <div className="rounded-[1.5rem] border border-white/10 bg-[#005A9C] p-6"><img src="/manus-storage/centro-ce-symbol_eb5181bc.png" alt="Sello temporal de la Lista 044" className="size-10" /><p className="mt-10 text-sm font-extrabold">Sitio en construcción, con información confirmada.</p></div>
             </div>
           </div>
         </section>
