@@ -37,10 +37,12 @@ import { toast } from "sonner";
 type ProposalState = "cumplida" | "en proceso" | "próxima";
 
 const proposals: { title: string; detail: string; state: ProposalState; area: string }[] = [
-  { title: "Plan de trabajo", detail: "La comisión está ordenando las primeras propuestas para compartirlas por este canal.", state: "en proceso", area: "Lista 044" },
-  { title: "Canales de consulta", detail: "Próximamente se informarán las formas oficiales para acercar ideas y preguntas.", state: "próxima", area: "Participación" },
-  { title: "Agenda estudiantil", detail: "Las actividades y comunicados se publicarán cuando estén confirmados.", state: "próxima", area: "Comunidad" },
-  { title: "Recursos útiles", detail: "El equipo está reuniendo los enlaces que realmente sirvan para la escuela.", state: "en proceso", area: "Información" },
+  { title: "Un kiosco con más opciones", detail: "Impulsar más variedad para el recreo y evaluar una apertura por la tarde, con alternativas pensadas para el almuerzo escolar.", state: "en proceso", area: "Vida escolar" },
+  { title: "Eventos que se viven", detail: "Recuperar celebraciones bien organizadas para fechas que importan: Día del Estudiante, fechas patrias, diversidad cultural, Halloween y cierre de año.", state: "próxima", area: "Comunidad" },
+  { title: "Interbandos 2026", detail: "Celebrar el Día del Estudiante con una jornada distinta, con dinámica renovada y más información a medida que se acerque la fecha.", state: "próxima", area: "Encuentro" },
+  { title: "Un mural hecho entre todos", detail: "Crear un mural para la Secundaria UNGS que reúna ideas, manos y miradas de estudiantes y docentes sobre nuestra identidad compartida.", state: "próxima", area: "Cultura" },
+  { title: "Caja de útiles", detail: "Armar un punto solidario con materiales básicos para acompañar a quien necesite resolver algo en el momento: lapiceras, pegamento y más.", state: "en proceso", area: "Acompañamiento" },
+  { title: "Primeros auxilios", detail: "Acercar un taller de nociones básicas para actuar con más calma, seguridad y responsabilidad ante una situación de emergencia.", state: "próxima", area: "Cuidado" },
 ];
 
 const events = [
@@ -179,13 +181,13 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-9 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
               <div>
-                <div className="section-label"><Flag className="size-3" /> Semáforo de propuestas</div>
-                <h2 className="display-face mt-4 text-4xl leading-[0.92] sm:text-5xl">LO QUE<br /><span className="text-[#005A9C] dark:text-[#78b9ff]">DIJIMOS</span>, SE VE.</h2>
-                <p className="mt-5 max-w-sm text-sm font-medium leading-6 text-muted-foreground">No prometemos humo. Acá está el avance de cada cosa que nos pidieron y la próxima que queremos activar.</p>
+                <div className="section-label"><Flag className="size-3" /> Propuestas · Lista 044</div>
+                <h2 className="display-face mt-4 text-4xl leading-[0.92] sm:text-5xl">IDEAS PARA<br /><span className="text-[#005A9C] dark:text-[#78b9ff]">MOVER</span> LA ESCUELA.</h2>
+                <p className="mt-5 max-w-sm text-sm font-medium leading-6 text-muted-foreground">Son propuestas que queremos impulsar paso a paso, con información clara y participación de la comunidad cuando cada una se ponga en marcha.</p>
               </div>
               <div className="flex flex-wrap gap-2 lg:justify-end">
-                {(["todas", "cumplida", "en proceso", "próxima"] as const).map((filter) => {
-                  const labels = { todas: "Todas", cumplida: "Hechas", "en proceso": "En proceso", próxima: "Se viene" };
+                {(["todas", "en proceso", "próxima"] as const).map((filter) => {
+                  const labels = { todas: "Todas", "en proceso": "En preparación", próxima: "A impulsar" };
                   return <button key={filter} onClick={() => setProposalFilter(filter)} className={`rounded-full border px-3.5 py-2 text-xs font-extrabold transition ${proposalFilter === filter ? "border-[#0d1117] bg-[#0d1117] text-white dark:border-[#f5a623] dark:bg-[#f5a623] dark:text-[#0d1117]" : "border-border bg-card hover:border-[#f5a623]"}`}>{labels[filter]}</button>;
                 })}
               </div>
@@ -194,9 +196,9 @@ export default function Home() {
             <div className="mt-9 grid gap-4 md:grid-cols-2">
               {visibleProposals.map((proposal, index) => {
                 const map = {
-                  cumplida: { label: "CUMPLIDA", dot: "bg-[#92e2c6]", border: "border-[#92e2c6]/55", icon: Check },
-                  "en proceso": { label: "EN PROCESO", dot: "bg-[#f5a623]", border: "border-[#f5a623]/55", icon: Zap },
-                  próxima: { label: "PRÓXIMA", dot: "bg-[#78b9ff]", border: "border-[#78b9ff]/55", icon: ArrowRight },
+                  cumplida: { label: "REALIZADA", dot: "bg-[#92e2c6]", border: "border-[#92e2c6]/55", icon: Check },
+                  "en proceso": { label: "EN PREPARACIÓN", dot: "bg-[#f5a623]", border: "border-[#f5a623]/55", icon: Zap },
+                  próxima: { label: "A IMPULSAR", dot: "bg-[#78b9ff]", border: "border-[#78b9ff]/55", icon: ArrowRight },
                 }[proposal.state];
                 const Icon = map.icon;
                 return <article key={proposal.title} className={`interactive-lift poster-card relative overflow-hidden rounded-[1.45rem] border bg-card p-5 ${map.border} ${index % 2 ? "md:translate-y-7" : ""}`}>
@@ -206,7 +208,7 @@ export default function Home() {
                   </div>
                   <h3 className="mt-8 text-xl font-extrabold tracking-tight">{proposal.title}</h3>
                   <p className="mt-2 text-sm font-medium leading-6 text-muted-foreground">{proposal.detail}</p>
-                  <div className="mt-6 flex items-center justify-between border-t border-border pt-3"><span className="text-xs font-bold text-muted-foreground">Actualizado esta semana</span><Icon className="size-4 text-[#005A9C] dark:text-[#f5a623]" /></div>
+                  <div className="mt-6 flex items-center justify-between border-t border-border pt-3"><span className="text-xs font-bold text-muted-foreground">Propuesta de la Lista 044</span><Icon className="size-4 text-[#005A9C] dark:text-[#f5a623]" /></div>
                 </article>;
               })}
             </div>

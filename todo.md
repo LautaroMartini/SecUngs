@@ -5,3 +5,5 @@
 - [x] Mantener la jerarquía visual y el sello de la Lista 044 en los nuevos datos.
 - [ ] Incorporar el logo oficial cuando el usuario lo adjunte.
 - [ ] Verificar la experiencia responsive y guardar un checkpoint.
+- [x] Redactar e incorporar las propuestas reales de la Lista 044.
+- [x] Validar la presentación de propuestas en escritorio y celular.
