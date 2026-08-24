@@ -40,10 +40,15 @@ const proposals: { title: string; detail: string; state: ProposalState; area: st
   { title: "Un kiosco con más opciones", detail: "Impulsar más variedad para el recreo y evaluar una apertura por la tarde, con alternativas pensadas para el almuerzo escolar.", state: "en proceso", area: "Vida escolar" },
   { title: "Eventos que se viven", detail: "Recuperar celebraciones bien organizadas para fechas que importan: Día del Estudiante, fechas patrias, diversidad cultural, Halloween y cierre de año.", state: "próxima", area: "Comunidad" },
   { title: "Interbandos 2026", detail: "Celebrar el Día del Estudiante con una jornada distinta, con dinámica renovada y más información a medida que se acerque la fecha.", state: "próxima", area: "Encuentro" },
-  { title: "Torneo de fútbol entre cursos", detail: "Organizar una competencia para encontrarnos, representar a cada curso y fortalecer el compañerismo. Cada equipo podrá elegir su DT, jugadores y suplentes.", state: "próxima", area: "Deportes" },
+  { title: "Torneos deportivos", detail: "Organizar competencias para encontrarnos, representar a cada curso y fortalecer el compañerismo. El fútbol tendrá equipos con DT, jugadores y suplentes, y se buscará sumar otras disciplinas.", state: "próxima", area: "Deportes" },
+  { title: "Encuentros deportivos con otras escuelas", detail: "Preparar jornadas deportivas junto a otras escuelas para compartir, competir con respeto y sumar nuevas experiencias entre estudiantes.", state: "en proceso", area: "Deportes" },
+  { title: "Las Malvinenses", detail: "Una iniciativa en preparación vinculada a Las Malvinenses. Compartiremos su propuesta, fecha y forma de participación cuando estén definidas.", state: "en proceso", area: "Memoria" },
   { title: "Un mural hecho entre todos", detail: "Crear un mural para la Secundaria UNGS que reúna ideas, manos y miradas de estudiantes y docentes sobre nuestra identidad compartida.", state: "próxima", area: "Cultura" },
   { title: "Caja de útiles", detail: "Armar un punto solidario con materiales básicos para acompañar a quien necesite resolver algo en el momento: lapiceras, pegamento y más.", state: "en proceso", area: "Acompañamiento" },
   { title: "Primeros auxilios", detail: "Acercar un taller de nociones básicas para actuar con más calma, seguridad y responsabilidad ante una situación de emergencia.", state: "próxima", area: "Cuidado" },
+  { title: "Día del Estudiante", detail: "Impulsar una jornada para celebrar el encuentro, la participación y todo lo que hace especial a nuestra comunidad estudiantil.", state: "próxima", area: "Comunidad" },
+  { title: "Fiesta de fin de año", detail: "Pensar un cierre de año compartido para despedirnos, celebrar lo vivido y encontrarnos antes de las vacaciones.", state: "próxima", area: "Comunidad" },
+  { title: "Cine debate", detail: "Abrir espacios para ver películas, conversar, intercambiar miradas y debatir temas que atraviesan a estudiantes y a la comunidad.", state: "próxima", area: "Cultura" },
 ];
 
 const events = [

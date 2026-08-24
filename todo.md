@@ -21,3 +21,5 @@
 - [x] Corregir la superposición en las tarjetas de Novedades.
 - [x] Retirar las imágenes generadas de los marcos visuales.
 - [x] Conservar marcos, etiquetas y espacios preparados para fotografías reales.
+- [x] Redactar e incorporar las nuevas iniciativas y actividades en preparación.
+- [x] Validar su presentación en la sección de propuestas.
