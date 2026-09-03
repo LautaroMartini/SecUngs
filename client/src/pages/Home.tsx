@@ -12,9 +12,7 @@ import {
   Check,
   ChevronRight,
   CircleHelp,
-  ClipboardPenLine,
   ExternalLink,
-  FileText,
   Flag,
   GraduationCap,
   Instagram,
@@ -22,9 +20,7 @@ import {
   Menu,
   MessageCircleMore,
   Moon,
-  NotebookTabs,
   Send,
-  Sparkles,
   Sun,
   Trophy,
   UsersRound,
@@ -55,13 +51,6 @@ const events = [
   { date: "PRONTO", type: "COMUNICADOS", title: "Las novedades de la Lista 044 aparecen acá", tone: "blue" },
   { date: "PRONTO", type: "ACTIVIDADES", title: "Cuando haya una fecha confirmada, la vas a encontrar acá", tone: "night" },
   { date: "PRONTO", type: "PARTICIPACIÓN", title: "Estamos ordenando el espacio para escuchar a todos", tone: "gold" },
-];
-
-const resources = [
-  { title: "Apuntes", icon: NotebookTabs, note: "En preparación", color: "bg-[#700A13] text-white" },
-  { title: "Horarios", icon: CalendarDays, note: "En preparación", color: "bg-[#FFF0C6] text-[#2B0710]" },
-  { title: "Calendario", icon: ClipboardPenLine, note: "En preparación", color: "bg-[#4B121B] text-white" },
-  { title: "Material de estudio", icon: FileText, note: "En preparación", color: "bg-[#F4E0D5] text-[#2B0710]" },
 ];
 
 const committee = [
@@ -250,15 +239,6 @@ export default function Home() {
                   <span aria-hidden="true" className="pointer-events-none absolute bottom-3 right-4 z-0 text-7xl font-black leading-none opacity-10">0{i + 1}</span>
                 </article>;
               })}
-            </div>
-          </div>
-        </section>
-
-        <section id="herramientas" className="scroll-mt-20 bg-[#F4E0D5] py-16 text-[#2B0710] sm:py-20 lg:py-28">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="max-w-2xl"><div className="section-label border-[#700A13]/35 text-[#700A13]"><Sparkles className="size-3" /> Caja de herramientas</div><h2 className="display-face mt-4 text-4xl leading-[.9] sm:text-5xl">LO QUE NECESITÁS, SIN DAR MIL VUELTAS.</h2></div>
-            <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {resources.map(({ title, icon: Icon, note, color }, index) => <button key={title} onClick={() => toast.message(`${title}: próximamente`, { description: "Este acceso se conectará cuando estén listos los enlaces oficiales." })} className={`interactive-lift group relative min-h-[174px] rounded-[1.55rem] p-5 text-left shadow-[5px_5px_0_#2B0710] ${color} ${index === 1 ? "lg:-translate-y-5" : index === 3 ? "lg:translate-y-5" : ""}`}><span className="absolute right-4 top-4 text-[.58rem] font-black tracking-[.15em] opacity-55">44/ 0{index + 1}</span><div className="flex items-start justify-between"><Icon className="size-7" /><ArrowUpRightIcon /></div><p className="mt-10 text-lg font-extrabold leading-5">{title}</p><p className="mt-1 text-xs font-bold opacity-70">{note}</p></button>)}
             </div>
           </div>
         </section>

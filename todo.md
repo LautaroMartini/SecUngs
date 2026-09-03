@@ -25,3 +25,5 @@
 - [x] Validar su presentación en la sección de propuestas.
 - [x] Eliminar la sección «Conexión UNGS» y sus elementos asociados.
 - [x] Verificar el flujo de la página después de retirarla.
+- [x] Eliminar la sección Caja de herramientas y sus tarjetas provisionales.
+- [x] Verificar el flujo de la página después de retirar Recursos.
