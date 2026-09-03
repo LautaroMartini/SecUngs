@@ -15,3 +15,7 @@ Las vistas **320 × 568** y **768 × 1024** conservan lectura clara, jerarquía 
 ## Corrección de Novedades
 
 Las tarjetas de Novedades pasaron a una composición flexible: fecha y categoría ocupan la cabecera, el título usa una escala contenida, el enlace queda después del contenido y el numeral decorativo se mantiene detrás de la lectura. La revisión en escritorio y móvil confirmó que ya no hay superposición entre estos elementos.
+
+## Limpieza de contenido
+
+La sección Conexión UNGS fue retirada por completo. La revisión visual posterior confirmó que el flujo pasa de Comisión a Recursos sin espacios vacíos anómalos ni bloques residuales.
